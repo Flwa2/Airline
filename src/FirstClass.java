@@ -16,7 +16,7 @@ public class FirstClass extends Seat {
 
     }
 
-    public void disply() {
+    public void display() {
         System.out.println("THE COST OF " + seattype + "SEAT CODE " + seatCode + "IS " + price);
     }
 }
