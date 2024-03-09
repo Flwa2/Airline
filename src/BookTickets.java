@@ -2,6 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
+// @author FLWAH ALRASHED
 import java.util.Arrays;
 
 public class BookTickets {
@@ -38,7 +40,7 @@ public class BookTickets {
 
     @Override
     public String toString() {
-        return "BookTickets information : \n" + "Booking ID : " + BookingID + "\n flights : " + Arrays.toString(flights) + "\n number Of Booking : " + numOfBooking ;
+        return "BookTickets information : \n" + "Booking ID : " + BookingID + "\n flights : " + Arrays.toString(flights) + "\n number Of Booking : " + numOfBooking;
     }
-    
+
 }
