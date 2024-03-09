@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+public class BookTickets {
 
-public class Flight {
-    
+    private int BookingID;
+    private Flight flightDetials;
+    private int numOfbooking;
 }
