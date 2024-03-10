@@ -5,25 +5,26 @@
 
 public class Flight {
 
-    private int FlightNumber;
-    private String ArrivalCity;
-    private String DepartureCity;
-    private String Arrival_time;
-    private String Departure_time;
-    private Seat[] listOfSeats;
-    public int nOs;
+    private int FlightNumber ;
+	private String ArrivalCity;
+	private String DepartureCity;
+	private String Arrival_time;
+	private String Departure_time;
+	private Seat [] listOfSeats;
+	public int nOs;
 
     public Flight(int flightNumber, String arrivalCity, String departureCity, String arrival_time,
-            String departure_time, int size) {
-        FlightNumber = flightNumber;
-        ArrivalCity = arrivalCity;
-        DepartureCity = departureCity;
-        Arrival_time = arrival_time;
-        Departure_time = departure_time;
-        listOfSeats = new Seat[size];
-        nOs = 0;
-    }
-
+			String departure_time , int size) {
+		super();
+		FlightNumber = flightNumber;
+		ArrivalCity = arrivalCity;
+		DepartureCity = departureCity;
+		Arrival_time = arrival_time;
+		Departure_time = departure_time;
+		listOfSeats = new Seat[size];
+		nOs =0;
+	}
+    
     public boolean AddSeat(Seat s) { //To add the given seat to the array in the first empty location and return true. If there is no space for the addition return false.
         if (nOs < listOfSeats.length) {
             listOfSeats[nOs++] = s;
@@ -53,7 +54,7 @@ public class Flight {
     }
 
     @Override
-    public String toString() { // 
+    public String toString() { // Method to print FlightNumber , ArrivalCity ,DepartureCity, Arrival_time, Departure_time, array listOfSeats, nOs.
         String str = "Flight FlightNumber : " + FlightNumber 
                 + "\nArrival City : " + ArrivalCity + "\nDepartureCity : "
                 + DepartureCity + "\nArrival time : " + Arrival_time + "\nDeparture_time : " + Departure_time
@@ -62,7 +63,7 @@ public class Flight {
         for (Seat listOfSeat : listOfSeats) {
             str = str + listOfSeat.toString();
         }
-        return null;
+        return str;
     }
 
 }
