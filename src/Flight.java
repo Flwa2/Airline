@@ -15,7 +15,6 @@ public class Flight {
 
     public Flight(int flightNumber, String arrivalCity, String departureCity, String arrival_time,
 			String departure_time , int size) {
-		super();
 		FlightNumber = flightNumber;
 		ArrivalCity = arrivalCity;
 		DepartureCity = departureCity;
