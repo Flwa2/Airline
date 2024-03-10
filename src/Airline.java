@@ -37,19 +37,18 @@ public class Airline {
         return false;
     }
 
-    public String SearchFlight(String ArCity, String DeCity) { // returns information about a flight if the given ArrivalCity & DepartureCity is exists in any flight, otherwise return "Sorry not found".
-        String str = "";
-        for (int i = 0; i < nOf; i++) {
-            if (flights[i].getArrivalCity().equals(ArCity) && flights[i].getDepartureCity().equals(DeCity)) {
-                str = str + flights[i].toString();
-            }
-        }
-        if (str == "") {
-            return "Sorry not found";
-        } else {
-            return str;
-        }
+    public listOfFlights[] SearchFlight(String ArCity, String DeCity) { // returns array contains information about a flight if the given ArrivalCity & DepartureCity is exists in any flight, otherwise return null
+     Flight listOfFlights [] = new Flight[nOf]
+         int j=0;
+        for (int i = 0; i < nOf; i++) 
+            if (flights[i].getArrivalCity().equals(ArCity) && flights[i].getDepartureCity().equals(DeCity)) 
+               listOfFlights [j++] = flights [i];
 
+        if (j != 0) 
+            return listOfFlights;
+        else 
+            return null;
+
+    
     }
-
 }
