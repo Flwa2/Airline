@@ -5,8 +5,8 @@
 
 public class FirstClass extends Seat {
 
-    public FirstClass(String seatCode, String seattype, double price) {
-        super(seatCode, seattype, price);
+    public FirstClass(String seattype, double price) {
+        super(seattype, price);
     }
 
     @Override
@@ -16,7 +16,12 @@ public class FirstClass extends Seat {
 
     }
 
+    @Override
+    public String getSeatType() {
+        return "First Class";
+    }
+
     public void display() {
-        System.out.println("THE COST OF " + seattype + "SEAT CODE " + seatCode + "IS " + price);
+        System.out.println("THE COST OF " + seatType + "SEAT CODE " + seatCode + "IS " + price);
     }
 }

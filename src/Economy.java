@@ -3,25 +3,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+public class Economy extends Seat {
 
-public class Econmy extends Seat {
-
-    public Econmy(String seatCode, String seattype, double price) {
-        super(seatCode, seattype, price);
+    public Economy(String seattype, double price) {
+        super(seattype, price);
     }
 
     @Override
     public double Calculateprice() {
 
         return price;
-	
+
     }
-    
+
+    @Override
+    public String getSeatType() {
+        return "Economy";
+    }
 
     public void dispaly() {
-        System.out.println("THE COST OF " + seattype + "SEAT CODE " + seatCode + "IS " + price);
+        System.out.println("THE COST OF " + seatType + "SEAT CODE " + seatCode + "IS " + price);
     }
 
 }
-
- 

@@ -5,8 +5,8 @@
 
 public class Business extends Seat {
 
-    public Business(String seatCode, String seattype, double price) {
-        super(seatCode, seattype, price);
+    public Business(String seattype, double price) {
+        super(seattype, price);
     }
 
     @Override
@@ -15,8 +15,12 @@ public class Business extends Seat {
         return price * 2;
 
     }
+      @Override
+    public String getSeatType() {
+       return "Business";
+    }
 
     public void dispaly() {
-        System.out.println("THE COST OF " + seattype + "SEAT CODE " + seatCode + "IS " + price);
+        System.out.println("THE COST OF " + seatType + "SEAT CODE " + seatCode + "IS " + price);
     }
 }

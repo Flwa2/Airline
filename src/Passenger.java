@@ -9,21 +9,39 @@ public class Passenger {
     private String name;
     private String passportNumber;
     private String mobileNumber;
-    private int age;
+    private String seatNumber;
+    private Flight flight; // to store flight information 
 
-    public Passenger(String name, String passport, String mobile, int age) {
+    public Passenger(String name, String passport, String mobile, String seatNumber) {
         this.name = name;
         passportNumber = passport;
         mobileNumber = mobile;
-        this.age = age;
+        this.seatNumber = seatNumber;
     }
 
-// Method to book a flight
-    public void bookFlight(Flight flight, Seat seat) {
+    // Getter and Setter Method  to use it  for class BookTicket
+    public String getName() {
+        return name;
+    }
 
-//        if(Seat.isAvailable()){
-//            
-//        }
+    public String getPassportNumber() {
+        return passportNumber;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public String getSeatNumber() {
+        return seatNumber;
+    }
+
+    public Flight getFlight() {
+        return flight;
+    }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
     }
 
 }
