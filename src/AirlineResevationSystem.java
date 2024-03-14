@@ -118,8 +118,12 @@ public class AirlineResevationSystem {
                     break;
 
                 case 2:         //Cancel reservation
-
+                    System.out.print("Enter booking ID to cancel: ");
+                    String bookingID = input.nextLine();
+                    bookTickets.cancelFlight(bookingID);
                     break;
+
+                 
 
                 case 3:
                     //Search for flights
@@ -139,9 +143,16 @@ public class AirlineResevationSystem {
                         System.out.println("No available flights were found for the specified destination.");
                     }
                     break;
-                case 4:
+                
+                      case 4:
                     //displaying user ticket info
+                 
+    System.out.print("Enter booking ID: ");
+                    String bookingIDToDisplay = input.nextLine();
+                    bookTickets.displayTicketInfo(bookingIDToDisplay);
                     break;
+               
+                   
                 case 5:
                     System.out.println("Exiting...");
                     break;
