@@ -15,9 +15,20 @@ public class Business extends Seat {
         return price * 2;
 
     }
-      @Override
+
+    @Override
+    protected String generateSeatCode() {
+        if (nextSeatNumber <= capacity) {
+            seatCode = String.format("%02d", nextSeatNumber++);
+            return "B" + seatCode;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
     public String getSeatType() {
-       return "Business";
+        return "Business";
     }
 
     public void dispaly() {

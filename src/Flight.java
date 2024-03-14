@@ -20,8 +20,8 @@ public class Flight {
     private String Departure_time;
     private Seat[] listOfSeats;     // Array to add passengers in the seats
     private Passenger[] passengers; // Array to add passengers 
-    public int nOs; // number of seats 
-    private int numOfPassenger;  // number of passengers 
+    public int nOs;                 // number of seats 
+    private int numOfPassenger;     // number of passengers 
 
     public Flight(String FlightNumber, String arrivalCity, String departureCity, String arrival_time,
             String departure_time, int numSeats) {
@@ -81,6 +81,7 @@ public class Flight {
     public int Capacity() { //To return number of seats in the flight.
         return listOfSeats.length;
     }
+    
 
     public String getArrivalCity() { //To return Arrival city.
         return ArrivalCity;
@@ -90,17 +91,26 @@ public class Flight {
         return DepartureCity;
     }
 
+    public String getArrival_time() {
+        return Arrival_time;
+    }
+
+    public String getDeparture_time() {
+        return Departure_time;
+    }
+
     @Override
     public String toString() {  // Method to print FlightNumber , ArrivalCity ,DepartureCity, Arrival_time, Departure_time, array listOfSeats, nOs.
         String str = "Flight FlightNumber : " + FlightNumber
                 + "\nArrival City : " + ArrivalCity + "\nDepartureCity : "
                 + DepartureCity + "\nArrival time : " + Arrival_time + "\nDeparture_time : " + Departure_time
-                + " \n number Of seat : " + nOs;
+                + "\nnumber Of seat : " + nOs;
 
-        for (Seat listOfSeat : listOfSeats) {
-            str = str + listOfSeat.toString();
-        }
         return str;
+//        for (Seat listOfSeat : listOfSeats) {
+//            str = str + listOfSeat.toString();
+//        }
+//        return str;
     }
 
 }

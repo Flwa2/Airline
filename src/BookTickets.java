@@ -20,7 +20,7 @@ public class BookTickets {
         this.BookingID = generateBookingID();
         flights = new Flight[Capacity];
         passengers = new Passenger[Capacity];
-        this.numOfBooking = 0;
+        numOfBooking++;
         numOfPassengers = 0;
     }
 
@@ -35,78 +35,51 @@ public class BookTickets {
         return BookingID;
     }
 
-    public void bookFlight(Flight flight, String passengerName, String passportNumber, String mobileNumber, String seatNumber) {
+    public void bookFlight(Flight[] f, Passenger p) {
+
         if (numOfBooking < flights.length) {
             boolean seatAvailable = true;
-            for (int i = 0; i < numOfPassengers; i++) {
-                if (passengers[i] != null && passengers[i].getFlight().equals(flight) && passengers[i].getSeatNumber().equals(seatNumber)) {
+            for (int i = 0; i < numOfBooking; i++) {
+                // p.setFlight(flight); // Set the flight information
+                if (passengers[i] != null && passengers[i].getSeatCode().equals(p.getSeatCode())) {
                     seatAvailable = false;
                     break;
                 }
             }
             // Check if the seat is available
             if (seatAvailable) {
-                Passenger passenger = new Passenger(passengerName, passportNumber, mobileNumber, seatNumber);
-                passenger.setFlight(flight); // Set the flight information
-                passengers[numOfPassengers++] = passenger;
-                System.out.println("Flight booked successfully for passenger: " + passenger.getName());
+                p.setFlight(f); // Set the flight information
+                p.setBookingID(BookingID); // set bookid for passenger 
+                passengers[numOfPassengers++] = p;
+                System.out.println("\nFlight booked successfully for : " + p.getName() + "\n Booking ID: " + BookingID);
+                numOfBooking++;
+
             } else {
-                System.out.println("Cannot book flight. The seat is already occupied.");
+                System.out.println("Cannot book flight. The seat is already booked.");  // the seat is booked
             }
-
-            // Book the flight
-            flights[numOfBooking++] = flight;
         } else {
-            System.out.println("Cannot book flight. All flights are booked.");
+            System.out.println("Cannot book flight. All flights are Full.");          // the flights is full
         }
     }
 
-    public void bookFlight(Flight flight) {
-        if (numOfBooking < flights.length) {
-            flights[numOfBooking++] = flight;
-            System.out.println("Flight booked successfully!");
-        } else {
-            System.out.println("Unable to book flight. All seats have been reserved");
-        }
-    }
-
-    public void cancelFlight(Flight flight) {
+    public void cancelFlight(String bookingID) {
         for (int i = 0; i < numOfBooking; i++) {
-            if (flights[i].equals(flight)) {
-                // Remove passengers associated with the canceled flight
+            if (flights[i] != null) {
                 for (int j = 0; j < numOfPassengers; j++) {
-                    if (passengers[j] != null && passengers[j].getFlight().equals(flight)) {
+                    if (passengers[j] != null && bookingID.equals(passengers[j].getBookID())) {
                         passengers[j] = null;
                     }
                 }
 
-                // Shift remaining elements to fill the gap
-                for (int j = i; j < numOfBooking - 1; j++) {
-                    flights[j] = flights[j + 1];
-                }
-                flights[--numOfBooking] = null;
-                System.out.println("Flight canceled successfully!");
-                return;
             }
+            for (int j = i; j < numOfBooking - 1; j++) {
+                flights[j] = flights[j + 1];
+            }
+            flights[--numOfBooking] = null;
+            System.out.println("Flight canceled successfully!");
+            return;
         }
         System.out.println("Flight not found!");
-    }
-
-    // Method to Search for Available Flight.
-    public Flight[] search() {
-        Flight[] available = new Flight[flights.length];
-        int count = 0; //to count available flights
-        System.out.println("Available flights:");
-        for (Flight f : flights) {
-            if (f != null && f.checkAvailbility()) { // check if the flight is available
-                available[count++] = f;
-            }
-        }
-        Flight[] result = new Flight[count];
-        for (int i = 0; i < count; i++) {
-            result[i] = available[i];
-        }
-        return result;
     }
 
     @Override

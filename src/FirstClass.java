@@ -5,6 +5,7 @@
 
 public class FirstClass extends Seat {
 
+
     public FirstClass(String seattype, double price) {
         super(seattype, price);
     }
@@ -14,6 +15,16 @@ public class FirstClass extends Seat {
 
         return price * 4;
 
+    }
+
+    @Override
+    protected String generateSeatCode() {
+        if (nextSeatNumber <= capacity) {
+            seatCode = String.format("%02d", nextSeatNumber++);
+            return "F" + seatCode;
+        } else {
+            return null;
+        }
     }
 
     @Override

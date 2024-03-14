@@ -7,26 +7,18 @@ public abstract class Seat {
 
     protected String seatCode;
     protected String seatType;
-    protected int nextSeatNumber = 1;
     protected double price;
     protected int capacity;
+    protected Flight flight;
+    protected static int nextSeatNumber = 1;  //Shared amoung FirstClass , Buisness , Economy to count number of seats 
+    protected static int totalCapacity = 270;
 
     public Seat(String seatType, double price) {
         this.seatType = seatType;
         this.price = price;
-        this.capacity = 170;
-        this.seatCode = generateSeatCode();
     }
 
-    private String generateSeatCode() {
-        if (getSeatType() != null) {
-            String seatNumber = String.format("A%02d", nextSeatNumber++);
-            return getSeatType().substring(0, 1).concat(seatNumber);
-        } else {
-            return null;
-        }
-
-    }
+    protected abstract String generateSeatCode();
 
     public abstract double Calculateprice();
 
@@ -40,6 +32,10 @@ public abstract class Seat {
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public void setSeatCode(String seatCode) {
+        this.seatCode = seatCode;
     }
 
 }

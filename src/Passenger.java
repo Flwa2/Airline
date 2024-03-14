@@ -9,17 +9,35 @@ public class Passenger {
     private String name;
     private String passportNumber;
     private String mobileNumber;
-    private String seatNumber;
-    private Flight flight; // to store flight information 
+    private String seatCode;
+    private String BookID;
 
-    public Passenger(String name, String passport, String mobile, String seatNumber) {
+    private Flight[] flight; // to store flight information 
+
+    public Passenger(String name, String passportNumber, String mobileNumber, String seatCode) {
         this.name = name;
-        passportNumber = passport;
-        mobileNumber = mobile;
-        this.seatNumber = seatNumber;
+        this.passportNumber = passportNumber;
+        this.mobileNumber = mobileNumber;
+        this.seatCode = seatCode;
     }
 
-    // Getter and Setter Method  to use it  for class BookTicket
+    // Getter and Setter Method
+    public void setSeatCode(String seatCode) {
+        this.seatCode = seatCode;
+    }
+
+    public void setFlight(Flight[] flight) {
+        this.flight = flight;
+    }
+
+    public void setBookingID(String ID) {
+        this.BookID = ID;
+    }
+
+    public String getBookID() {
+        return BookID;
+    }
+
     public String getName() {
         return name;
     }
@@ -32,16 +50,12 @@ public class Passenger {
         return mobileNumber;
     }
 
-    public String getSeatNumber() {
-        return seatNumber;
+    public String getSeatCode() {
+        return seatCode;
     }
 
-    public Flight getFlight() {
+    public Flight[] getFlight() {
         return flight;
-    }
-
-    public void setFlight(Flight flight) {
-        this.flight = flight;
     }
 
 }

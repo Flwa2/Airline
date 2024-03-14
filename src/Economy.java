@@ -17,6 +17,16 @@ public class Economy extends Seat {
     }
 
     @Override
+    protected String generateSeatCode() {
+        if (nextSeatNumber <= capacity) {
+            seatCode = String.format("%02d", nextSeatNumber++);
+            return "E" + seatCode;
+        } else {
+            return null;
+        }
+    }
+
+    @Override
     public String getSeatType() {
         return "Economy";
     }
