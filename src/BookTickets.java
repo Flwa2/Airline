@@ -82,9 +82,36 @@ public class BookTickets {
         System.out.println("Flight not found!");
     }
 
-    @Override
-    public String toString() {
-        return "BookTickets information : \n" + "Booking ID : " + BookingID + "\n flights : " + Arrays.toString(flights) + "\n number Of Booking : " + numOfBooking;
+   // @Override
+   // public String toString() {
+    //    return "BookTickets information : \n" + "Booking ID : " + BookingID + "\n flights : " + Arrays.toString(flights) + "\n number Of Booking : " + numOfBooking;
+    //}
+public void displayTicketInfo(String bookingID) {
+    boolean found = false;
+    for (Passenger passenger : passengers) {
+        if (passenger != null && bookingID.equals(passenger.getBookID())) {
+            System.out.println("Passenger Name: " + passenger.getName());
+            System.out.println("Passenger Passport Number: " + passenger.getPassportNumber());
+            System.out.println("Passenger Mobile Number: " + passenger.getMobileNumber());
+            System.out.println("Seat Code: " + passenger.getSeatCode());
+            // Get flight information associated with this passenger
+            Flight[] passengerFlights = passenger.getFlight();
+            for (Flight flight1 : passengerFlights) {
+                if (flight != null) {
+                    System.out.println("Flight Information:");
+                    System.out.println("Flight Number: " + flight1.getFlightNumber());
+                    System.out.println("Departure City: " + flight1.getDepartureCity());
+                    System.out.println("Arrival City: " + flight1.getArrivalCity());
+                    System.out.println("Departure Time: " + flight1.getDeparture_time());
+                    System.out.println("Arrival Time: " + flight1.getArrival_time());
+                }
+            }
+            found = true;
+            break;
+        }
     }
-
+    if (!found) {
+        System.out.println("No ticket found with the provided booking ID.");
+    }
+}
 }
