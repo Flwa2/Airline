@@ -44,17 +44,17 @@ public class Flight {
         return listOfSeats;
     }
 
-    public Passenger[] getPassengers() {
+    /*public Passenger[] getPassengers() {
         return passengers;
-    }
+    } */
 
     public int getnOs() {
         return nOs;
     }
 
-    public int getNumPassengers() {
+    /*public int getNumPassengers() {
         return numOfPassenger;
-    }
+    } */
 
   /*  public void AddSeat(Seat s) {
         if (numOfPassenger < nOs) {
