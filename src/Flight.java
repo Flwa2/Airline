@@ -4,44 +4,37 @@
  */
 
 public class Flight {
-//
-//    private int FlightNumber ;
-//	private String ArrivalCity;
-//	private String DepartureCity;
-//	private String Arrival_time;
-//	private String Departure_time;
-//	private Seat [] listOfSeats;
-//	public int nOs;
 
-    private String FlightNumber;
+
+   private String FlightNumber;
     private String ArrivalCity;
     private String DepartureCity;
     private String Arrival_time;
     private String Departure_time;
     private Seat[] listOfSeats;     // Array to add passengers in the seats
-    private Passenger[] passengers; // Array to add passengers 
+   // private Passenger[] passengers; // Array to add passengers 
     public int nOs;                 // number of seats 
-    private int numOfPassenger;     // number of passengers 
+   // private int numOfPassenger;     // number of passengers 
 
     public Flight(String FlightNumber, String arrivalCity, String departureCity, String arrival_time,
-            String departure_time, int numSeats) {
+            String departure_time) {
         this.FlightNumber = FlightNumber;
         ArrivalCity = arrivalCity;
         DepartureCity = departureCity;
         Arrival_time = arrival_time;
         Departure_time = departure_time;
-        listOfSeats = new Seat[numSeats];
-        passengers = new Passenger[numSeats];
-        nOs = numSeats;
-        this.numOfPassenger = 0;
+        listOfSeats = new Seat[170];
+       // passengers = new Passenger[numSeats];
+        nOs = numSeats =0 ;
+        //this.numOfPassenger = 0;
     }
 
-//    public boolean AddSeat(Seat s) { //To add the given seat to the array in the first empty location and return true. If there is no space for the addition return false.
-//        if (nOs < listOfSeats.length) {
-//            listOfSeats[nOs++] = s;
-//            return true;
-//        }
-//    }
+   public boolean AddSeat(Seat s) { //To add the given seat to the array in the first empty location and return true. If there is no space for the addition return false.
+       if (nOs < listOfSeats.length) {
+           listOfSeats[nOs++] = s;
+           return true;
+      }
+   }
     // Getter Methods 
     public String getFlightNumber() {
         return FlightNumber;
@@ -63,7 +56,7 @@ public class Flight {
         return numOfPassenger;
     }
 
-    public void AddSeat(Seat s) {
+  /*  public void AddSeat(Seat s) {
         if (numOfPassenger < nOs) {
             listOfSeats[numOfPassenger] = s;
             numOfPassenger++;
@@ -72,6 +65,7 @@ public class Flight {
         }
 
     }
+    */
 
     // return true if there is seat available, false if there is not seat available.
     public boolean checkAvailbility() {
@@ -104,7 +98,7 @@ public class Flight {
         String str = "Flight FlightNumber : " + FlightNumber
                 + "\nArrival City : " + ArrivalCity + "\nDepartureCity : "
                 + DepartureCity + "\nArrival time : " + Arrival_time + "\nDeparture_time : " + Departure_time
-                + "\nnumber Of seat : " + nOs;
+                + "\nnumber Of seat : " + 270;
 
         return str;
 //        for (Seat listOfSeat : listOfSeats) {
