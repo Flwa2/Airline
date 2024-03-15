@@ -37,5 +37,13 @@ public abstract class Seat {
     public void setSeatCode(String seatCode) {
         this.seatCode = seatCode;
     }
+public double getPrice() {
+	price=Calculateprice();
+	return price;
+}
 
+public static void display(Seat seat) {
+	  System.out.println("THE COST OF " +seat.seatType+ "  SEAT CODE   " + seat.seatCode + "  IS   " + seat.getPrice());
+}
+   
 }
