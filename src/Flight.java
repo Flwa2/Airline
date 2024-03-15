@@ -25,7 +25,7 @@ public class Flight {
         Departure_time = departure_time;
         listOfSeats = new Seat[170];
        // passengers = new Passenger[numSeats];
-        nOs = numSeats =0 ;
+        nOs = 0 ;
         //this.numOfPassenger = 0;
     }
 
