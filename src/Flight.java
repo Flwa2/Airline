@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package Airport;
 
 public class Flight {
 
 
-   private String FlightNumber;
+  private String FlightNumber;
     private String ArrivalCity;
     private String DepartureCity;
     private String Arrival_time;
@@ -23,18 +24,19 @@ public class Flight {
         DepartureCity = departureCity;
         Arrival_time = arrival_time;
         Departure_time = departure_time;
-        listOfSeats = new Seat[170];
-       // passengers = new Passenger[numSeats];
+        listOfSeats = new Seat[270];
+        //passengers = new Passenger[270];
         nOs = 0 ;
-        //this.numOfPassenger = 0;
+       // this.numOfPassenger = 0;
     }
 
-   public boolean AddSeat(Seat s) { //To add the given seat to the array in the first empty location and return true. If there is no space for the addition return false.
-       if (nOs < listOfSeats.length) {
+   public void AddSeat(Seat s) { //To add the given seat to the array in the first empty location and return true. If there is no space for the addition return false.
+       if (nOs < listOfSeats.length) 
            listOfSeats[nOs++] = s;
-           return true;
-      }
+           else 
+               System.out.println("No seats are available ");      
    }
+   
     // Getter Methods 
     public String getFlightNumber() {
         return FlightNumber;
