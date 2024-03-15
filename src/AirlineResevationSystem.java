@@ -14,11 +14,11 @@ public class AirlineResevationSystem {
         Airline airline = new Airline("Saudi Airline", "SA", 10);
         //Creating Flight object with information 
         Flight[] flights = {
-            new Flight("F100", "London", "Riyadh", "9:15", "14:30", 270),
-            new Flight("F101", "New York", "Paris", "8:00", "21:45", 150),
-            new Flight("F102", "Paris", "Jeddah", "10:30", "13:45", 200),
-            new Flight("F103", "Riyadh", "Dubai", "11:45", "18:30", 220),
-            new Flight("F104", "Tokyo", "Dammam", "15:20", "23:00", 180)
+            new Flight("F100", "London", "Riyadh", "9:15", "14:30"),
+            new Flight("F101", "New York", "Paris", "8:00", "21:45"),
+            new Flight("F102", "Paris", "Jeddah", "10:30", "13:45"),
+            new Flight("F103", "Riyadh", "Dubai", "11:45", "18:30"),
+            new Flight("F104", "Tokyo", "Dammam", "15:20", "23:00")
         };
 
         airline.AddFlights(flights);
@@ -34,7 +34,7 @@ public class AirlineResevationSystem {
 
         // Display the search results
         if (FlightsDitals != null && FlightsDitals.length > 0) {
-            System.out.println("Flights Ditals:");
+            System.out.println(" Ditals of available flights:");
             for (Flight flight : FlightsDitals) {
                 if (flight != null) {
                     System.out.println(flight);
