@@ -31,7 +31,5 @@ public class Business extends Seat {
         return "Business";
     }
 
-    public void dispaly() {
-        System.out.println("THE COST OF " + seatType + "SEAT CODE " + seatCode + "IS " + price);
-    }
+ 
 }
