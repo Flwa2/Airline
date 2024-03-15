@@ -52,7 +52,7 @@ public class AirlineResevationSystem {
         String SeatCode = ""; // to assign seat code and pass it to class BookTickets 
 
         do {
-            System.out.println("\nMenu:");
+            System.out.println("\nEnter your menu option:");
             System.out.println("1. Book a seat");
             System.out.println("2. Cancel reservation");
             System.out.println("3. Search for flights");
