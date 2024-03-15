@@ -105,6 +105,7 @@ public class AirlineResevationSystem {
                                 SeatCode = seat.generateSeatCode();
                                 System.out.println("seat code: " + SeatCode);
                                 bookTickets.bookFlight(FlightsDitals, new Passenger(Name, passport, mobile, SeatCode));
+                           Seat.display( seat);
                             }
                             break;
                         case 2:
@@ -113,6 +114,7 @@ public class AirlineResevationSystem {
                                 SeatCode = seat.generateSeatCode();
                                 System.out.println("seat code: " + SeatCode);
                                 bookTickets.bookFlight(FlightsDitals, new Passenger(Name, passport, mobile, SeatCode));
+                           Seat.display( seat);
                             }
                             break;
                         case 3:
@@ -121,6 +123,7 @@ public class AirlineResevationSystem {
                                 SeatCode = seat.generateSeatCode();
                                 System.out.println("seat code: " + SeatCode);
                                 bookTickets.bookFlight(FlightsDitals, new Passenger(Name, passport, mobile, SeatCode));
+                            Seat.display( seat);
                             }
                             break;
 
