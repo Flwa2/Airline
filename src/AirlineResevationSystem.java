@@ -53,17 +53,25 @@ public class AirlineResevationSystem {
 
         do {
             System.out.println("\nEnter your menu option:");
-            System.out.println("1. Book a seat");
-            System.out.println("2. Cancel reservation");
-            System.out.println("3. Search for flights");
-            System.out.println("4. Display user ticket info");
-            System.out.println("5. Exit");
+             System.out.println("1.Show all available flights");
+            System.out.println("2. Book a seat");
+            System.out.println("3. Cancel reservation");
+            System.out.println("4. Search for flights");
+            System.out.println("5. Display user ticket info");
+            System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             choice = input.nextInt();
             input.nextLine();
 
             switch (choice) {
+                //To show all available flights
                 case 1:
+                    System.out.println("All available flights:");
+        for (Flight flight : airline.getFlights()) {
+            if (flight != null) {
+                System.out.println(flight);
+            }}
+                case 2:
                     //Book a seat
                     int select;
                     System.out.print("Enter your name: ");
@@ -117,7 +125,7 @@ public class AirlineResevationSystem {
                     }
                     break;
 
-                case 2:         //Cancel reservation
+                case 3:         //Cancel reservation
                     System.out.print("Enter booking ID to cancel: ");
                     String bookingID = input.nextLine();
                     bookTickets.cancelFlight(bookingID);
@@ -125,7 +133,7 @@ public class AirlineResevationSystem {
 
                  
 
-                case 3:
+                case 4:
                     //Search for flights
                     System.out.print("Enter the departure city: ");
                     String DCity = input.nextLine();    //assign the DCity to pass it to airline Search
@@ -144,7 +152,7 @@ public class AirlineResevationSystem {
                     }
                     break;
                 
-                      case 4:
+                      case 5:
                     //displaying user ticket info
                  
     System.out.print("Enter booking ID: ");
@@ -153,14 +161,14 @@ public class AirlineResevationSystem {
                     break;
                
                    
-                case 5:
+                case 6:
                     System.out.println("Exiting...");
                     break;
                 default:
                     System.out.println("Your selection is invalid. Please choose a number between 1 and 5.");
             }
 
-        } while (choice != 5);
+        } while (choice != 6);
 
         input.close();
     }
