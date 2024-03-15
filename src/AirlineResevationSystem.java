@@ -73,6 +73,11 @@ public class AirlineResevationSystem {
             }}
                 case 2:
                     //Book a seat
+                    System.out.print("Enter the departure city: ");
+                     departureCity = input.nextLine();
+                    System.out.print("Enter the arrival city: ");
+                   arrivalCity = input.nextLine();
+                   FlightsDitals = airline.SearchFlight(arrivalCity, departureCity);
                     int select;
                     System.out.print("Enter your name: ");
                     String Name = input.nextLine();
