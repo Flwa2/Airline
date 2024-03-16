@@ -41,15 +41,11 @@ public class Airline {
         }
         return false;
     }
-<<<<<<< Upstream, based on origin/master
-=======
 
     public Flight[] getFlights() {
         return flights;
-
     }
 
->>>>>>> b2bd4f7 update All classes & i remove the comments
     public Flight[] SearchFlight(String ArCity, String DeCity) { // returns array contains information about a flight if the given ArrivalCity & DepartureCity is exists in any flight, otherwise return null
 
         Flight listOfFlights[] = new Flight[nOf];
@@ -67,12 +63,6 @@ public class Airline {
         }
 
     }
-<<<<<<< Upstream, based on origin/master
-     public Flight[] getFlights() {
-    
-    return flights;
-}
-=======
 
     public boolean isValidFlight(String departureCity, String arrivalCity) {
         for (Flight flight : flights) {
@@ -82,6 +72,4 @@ public class Airline {
         }
         return false;
     }
-
->>>>>>> b2bd4f7 update All classes & i remove the comments
 }

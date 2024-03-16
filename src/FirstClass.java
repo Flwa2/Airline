@@ -26,9 +26,4 @@ public class FirstClass extends Seat {
     public String getSeatType() {
         return "First Class";
     }
-
-<<<<<<< Upstream, based on origin/master
-    
-=======
->>>>>>> b2bd4f7 update All classes & i remove the comments
 }

@@ -36,17 +36,7 @@ public abstract class Seat {
     public void setSeatCode(String seatCode) {
         this.seatCode = seatCode;
     }
-public double getPrice() {
-	price=Calculateprice();
-	return price;
-}
 
-<<<<<<< Upstream, based on origin/master
-public static void display(Seat seat) {
-	  System.out.println("THE COST OF " +seat.seatType+ "  SEAT CODE   " + seat.seatCode + "  IS   " + seat.getPrice());
-}
-   
-=======
     public double getPrice() {
         price = Calculateprice();
         return price;
@@ -55,6 +45,4 @@ public static void display(Seat seat) {
     public static void display(Seat seat) {
         System.out.println("The cost of " + seat.seatType + "\nSeat code :" + seat.getSeatCode() + " is " + seat.getPrice());
     }
-
->>>>>>> b2bd4f7 update All classes & i remove the comments
 }

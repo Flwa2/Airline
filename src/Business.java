@@ -25,9 +25,4 @@ public class Business extends Seat {
     public String getSeatType() {
         return "Business";
     }
-
-<<<<<<< Upstream, based on origin/master
- 
-=======
->>>>>>> b2bd4f7 update All classes & i remove the comments
 }
