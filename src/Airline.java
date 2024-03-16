@@ -19,15 +19,9 @@ public class Airline {
 
     public void AddFlights(Flight[] newFlights) { //To add the given flight to the array in the first empty location. 
 
-        for (Flight newFlight : newFlights) {
-            if (nOf < flights.length) {
+        for (Flight newFlight : newFlights) 
+            if (nOf < flights.length) 
                 flights[nOf++] = newFlight;
-            } else {
-                // out of the loop
-                break;
-            }
-        }
-
     }
 
     public boolean removeFlight(Flight f) { //receives a flight and removes the flight (replace the deleted one with the last element in the array). Returns true if the deletion was done successfully and false if the given flight is not found.
