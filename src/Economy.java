@@ -18,12 +18,8 @@ public class Economy extends Seat {
 
     @Override
     protected String generateSeatCode() {
-        if (nextSeatNumber <= capacity) {
-            seatCode = String.format("%02d", nextSeatNumber++);
-            return "E" + seatCode;
-        } else {
-            return null;
-        }
+        return seatCode = "E" + String.format("%02d", nextSeatNumber++);
+
     }
 
     @Override
@@ -31,5 +27,8 @@ public class Economy extends Seat {
         return "Economy";
     }
 
+<<<<<<< Upstream, based on origin/master
   
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
 }

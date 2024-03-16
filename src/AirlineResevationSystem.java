@@ -23,6 +23,7 @@ public class AirlineResevationSystem {
 
         airline.AddFlights(flights);
 
+<<<<<<< Upstream, based on origin/master
         //Search for flights
         System.out.print("Enter the departure city: ");
         String departureCity = input.nextLine();
@@ -48,12 +49,27 @@ public class AirlineResevationSystem {
         }
         BookTickets bookTickets = new BookTickets(50); // Creating a ticket booking system
 
+=======
+        BookTickets bookTickets = new BookTickets(Seat.totalCapacity); // Creating a ticket booking system 
+        // Declare object and Variables 
+        Passenger p;
+        Flight[] Search;
+        Seat seat;
+        String Name;
+        String passport;
+        String mobile;
+        int select;
+>>>>>>> b2bd4f7 update All classes & i remove the comments
         int choice;
         String SeatCode = ""; // to assign seat code and pass it to class BookTickets 
 
         do {
             System.out.println("\nEnter your menu option:");
+<<<<<<< Upstream, based on origin/master
              System.out.println("1.Show all available flights");
+=======
+            System.out.println("1. Show all available flights");
+>>>>>>> b2bd4f7 update All classes & i remove the comments
             System.out.println("2. Book a seat");
             System.out.println("3. Cancel reservation");
             System.out.println("4. Search for flights");
@@ -67,12 +83,24 @@ public class AirlineResevationSystem {
                 //To show all available flights
                 case 1:
                     System.out.println("All available flights:");
+<<<<<<< Upstream, based on origin/master
         for (Flight flight : airline.getFlights()) {
             if (flight != null) {
                 System.out.println(flight);
             }}
+=======
+                    for (Flight flight : airline.getFlights()) {
+                        if (flight != null) {
+                            System.out.println(flight);
+                        }
+
+                    }
+                    break;
+
+>>>>>>> b2bd4f7 update All classes & i remove the comments
                 case 2:
                     //Book a seat
+<<<<<<< Upstream, based on origin/master
                     System.out.print("Enter the departure city: ");
                      departureCity = input.nextLine();
                     System.out.print("Enter the arrival city: ");
@@ -85,6 +113,24 @@ public class AirlineResevationSystem {
                     String passport = input.nextLine();
                     System.out.print("Enter your mobile number: ");
                     String mobile = input.nextLine();
+=======
+                    System.out.print("\nEnter the departure city: ");
+                    String departureCity = input.nextLine();
+                    System.out.print("Enter the arrival city: ");
+                    String arrivalCity = input.nextLine();
+                    // Check if the entered cities match the flights information or not
+                    if (airline.isValidFlight(departureCity, arrivalCity)) {
+                        System.out.print("Enter your name: ");
+                        Name = input.nextLine();
+                        System.out.print("Enter passport number: ");
+                        passport = input.nextLine();
+                        System.out.print("Enter your mobile number: ");
+                        mobile = input.nextLine();
+                    } else {
+                        System.out.println("No available flights were found for the specified destination.");
+                        break;
+                    }
+>>>>>>> b2bd4f7 update All classes & i remove the comments
                     do {
                         System.out.println("Select the type of seat:");
                         System.out.println("1. First Class");
@@ -93,9 +139,8 @@ public class AirlineResevationSystem {
                         System.out.println("4. Exit booking seat");
                         System.out.print("Please select your seats :");
                         select = input.nextInt();
-                    } while (!(select >= 1 && select <= 3));  //until user selects a valid option
 
-                    Seat seat;  // Declare object 
+                    } while (!(select >= 1 && select <= 3));  //until user selects a valid option
 
                     switch (select) {
                         //select the type of seats
@@ -103,27 +148,42 @@ public class AirlineResevationSystem {
                             seat = new FirstClass("First Class ", 400.0);
                             if (seat instanceof FirstClass) {
                                 SeatCode = seat.generateSeatCode();
+<<<<<<< Upstream, based on origin/master
                                 System.out.println("seat code: " + SeatCode);
                                 bookTickets.bookFlight(FlightsDitals, new Passenger(Name, passport, mobile, SeatCode));
                            Seat.display( seat);
+=======
+                                bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
+                                Seat.display(seat);
+>>>>>>> b2bd4f7 update All classes & i remove the comments
                             }
                             break;
                         case 2:
                             seat = new Business("Business", 200.0);
                             if (seat instanceof Business) {
                                 SeatCode = seat.generateSeatCode();
+<<<<<<< Upstream, based on origin/master
                                 System.out.println("seat code: " + SeatCode);
                                 bookTickets.bookFlight(FlightsDitals, new Passenger(Name, passport, mobile, SeatCode));
                            Seat.display( seat);
+=======
+                                bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
+                                Seat.display(seat);
+>>>>>>> b2bd4f7 update All classes & i remove the comments
                             }
                             break;
                         case 3:
                             seat = new Economy("Economy", 100.0);
                             if (seat instanceof Economy) {
                                 SeatCode = seat.generateSeatCode();
+<<<<<<< Upstream, based on origin/master
                                 System.out.println("seat code: " + SeatCode);
                                 bookTickets.bookFlight(FlightsDitals, new Passenger(Name, passport, mobile, SeatCode));
                             Seat.display( seat);
+=======
+                                bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
+                                Seat.display(seat);
+>>>>>>> b2bd4f7 update All classes & i remove the comments
                             }
                             break;
 
@@ -139,36 +199,52 @@ public class AirlineResevationSystem {
                     bookTickets.cancelFlight(bookingID);
                     break;
 
+<<<<<<< Upstream, based on origin/master
                  
 
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
                 case 4:
                     //Search for flights
                     System.out.print("Enter the departure city: ");
                     String DCity = input.nextLine();    //assign the DCity to pass it to airline Search
                     System.out.print("Enter the arrival city: ");
                     String ACity = input.nextLine();    //assign the Acity to pass it to airline Search
-                    FlightsDitals = airline.SearchFlight(ACity, DCity);
-                    if (FlightsDitals != null && FlightsDitals.length > 0) {
-                        System.out.println("Search Results:");
-                        for (Flight flight : FlightsDitals) {
-                            if (flight != null) {
-                                System.out.println(flight);
+                    // Check if the entered cities match the flights information or not
+                    if (airline.isValidFlight(DCity, ACity)) {
+                        Search = airline.SearchFlight(ACity, DCity);
+                        if (Search != null && Search.length > 0) {
+                            System.out.println("Search Results:");
+                            for (Flight flight : Search) {
+                                if (flight != null) {
+                                    System.out.println(flight);
+                                }
                             }
                         }
                     } else {
                         System.out.println("No available flights were found for the specified destination.");
                     }
+
                     break;
+<<<<<<< Upstream, based on origin/master
                 
                       case 5:
+=======
+
+                case 5:
+>>>>>>> b2bd4f7 update All classes & i remove the comments
                     //displaying user ticket info
-                 
-    System.out.print("Enter booking ID: ");
+
+                    System.out.print("Enter booking ID: ");
                     String bookingIDToDisplay = input.nextLine();
                     bookTickets.displayTicketInfo(bookingIDToDisplay);
                     break;
+<<<<<<< Upstream, based on origin/master
                
                    
+=======
+
+>>>>>>> b2bd4f7 update All classes & i remove the comments
                 case 6:
                     System.out.println("Exiting...");
                     break;

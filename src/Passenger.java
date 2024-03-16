@@ -11,8 +11,7 @@ public class Passenger {
     private String mobileNumber;
     private String seatCode;
     private String BookID;
-
-    private Flight[] flight; // to store flight information 
+    private Flight[] flights; // to store flight information 
 
     public Passenger(String name, String passportNumber, String mobileNumber, String seatCode) {
         this.name = name;
@@ -27,11 +26,11 @@ public class Passenger {
     }
 
     public void setFlight(Flight[] flight) {
-        this.flight = flight;
+        this.flights = flight;
     }
 
-    public void setBookingID(String ID) {
-        this.BookID = ID;
+    public void setBookID(String BookID) {
+        this.BookID = BookID;
     }
 
     public String getBookID() {
@@ -55,7 +54,7 @@ public class Passenger {
     }
 
     public Flight[] getFlight() {
-        return flight;
+        return flights;
     }
 
 }

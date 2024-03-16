@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 public abstract class Seat {
 
     protected String seatCode;
@@ -42,8 +41,20 @@ public double getPrice() {
 	return price;
 }
 
+<<<<<<< Upstream, based on origin/master
 public static void display(Seat seat) {
 	  System.out.println("THE COST OF " +seat.seatType+ "  SEAT CODE   " + seat.seatCode + "  IS   " + seat.getPrice());
 }
    
+=======
+    public double getPrice() {
+        price = Calculateprice();
+        return price;
+    }
+
+    public static void display(Seat seat) {
+        System.out.println("The cost of " + seat.seatType + "\nSeat code :" + seat.getSeatCode() + " is " + seat.getPrice());
+    }
+
+>>>>>>> b2bd4f7 update All classes & i remove the comments
 }

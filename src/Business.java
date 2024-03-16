@@ -18,12 +18,7 @@ public class Business extends Seat {
 
     @Override
     protected String generateSeatCode() {
-        if (nextSeatNumber <= capacity) {
-            seatCode = String.format("%02d", nextSeatNumber++);
-            return "B" + seatCode;
-        } else {
-            return null;
-        }
+        return seatCode = "B" + String.format("%02d", nextSeatNumber++);
     }
 
     @Override
@@ -31,5 +26,8 @@ public class Business extends Seat {
         return "Business";
     }
 
+<<<<<<< Upstream, based on origin/master
  
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
 }

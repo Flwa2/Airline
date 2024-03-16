@@ -17,13 +17,6 @@ public class Airline {
         nOf = 0;
     }
 
-//    public boolean AddFlight(Flight[] f) { 
-//        if (nOf < flights.length) {
-//            flights[nOf++] = f;
-//            return true;
-//        }
-//        return false;
-//    }
     public void AddFlights(Flight[] newFlights) { //To add the given flight to the array in the first empty location. 
 
         for (Flight newFlight : newFlights) {
@@ -48,6 +41,15 @@ public class Airline {
         }
         return false;
     }
+<<<<<<< Upstream, based on origin/master
+=======
+
+    public Flight[] getFlights() {
+        return flights;
+
+    }
+
+>>>>>>> b2bd4f7 update All classes & i remove the comments
     public Flight[] SearchFlight(String ArCity, String DeCity) { // returns array contains information about a flight if the given ArrivalCity & DepartureCity is exists in any flight, otherwise return null
 
         Flight listOfFlights[] = new Flight[nOf];
@@ -65,8 +67,21 @@ public class Airline {
         }
 
     }
+<<<<<<< Upstream, based on origin/master
      public Flight[] getFlights() {
     
     return flights;
 }
+=======
+
+    public boolean isValidFlight(String departureCity, String arrivalCity) {
+        for (Flight flight : flights) {
+            if (flight != null && flight.getDepartureCity().equalsIgnoreCase(departureCity) && flight.getArrivalCity().equalsIgnoreCase(arrivalCity)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+>>>>>>> b2bd4f7 update All classes & i remove the comments
 }

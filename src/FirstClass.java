@@ -5,7 +5,6 @@
 
 public class FirstClass extends Seat {
 
-
     public FirstClass(String seattype, double price) {
         super(seattype, price);
     }
@@ -19,12 +18,8 @@ public class FirstClass extends Seat {
 
     @Override
     protected String generateSeatCode() {
-        if (nextSeatNumber <= capacity) {
-            seatCode = String.format("%02d", nextSeatNumber++);
-            return "F" + seatCode;
-        } else {
-            return null;
-        }
+        return seatCode = "F" + String.format("%02d", nextSeatNumber++);
+
     }
 
     @Override
@@ -32,5 +27,8 @@ public class FirstClass extends Seat {
         return "First Class";
     }
 
+<<<<<<< Upstream, based on origin/master
     
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
 }

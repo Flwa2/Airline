@@ -2,8 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+<<<<<<< Upstream, based on origin/master
 package Airport;
 
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
 public class Flight {
 
 
@@ -13,9 +16,15 @@ public class Flight {
     private String Arrival_time;
     private String Departure_time;
     private Seat[] listOfSeats;     // Array to add passengers in the seats
+<<<<<<< Upstream, based on origin/master
    // private Passenger[] passengers; // Array to add passengers 
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
     public int nOs;                 // number of seats 
+<<<<<<< Upstream, based on origin/master
    // private int numOfPassenger;     // number of passengers 
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
 
     public Flight(String FlightNumber, String arrivalCity, String departureCity, String arrival_time,
             String departure_time) {
@@ -25,11 +34,16 @@ public class Flight {
         Arrival_time = arrival_time;
         Departure_time = departure_time;
         listOfSeats = new Seat[270];
+<<<<<<< Upstream, based on origin/master
         //passengers = new Passenger[270];
         nOs = 0 ;
        // this.numOfPassenger = 0;
+=======
+        nOs = 0;
+>>>>>>> b2bd4f7 update All classes & i remove the comments
     }
 
+<<<<<<< Upstream, based on origin/master
    public void AddSeat(Seat s) { //To add the given seat to the array in the first empty location and return true. If there is no space for the addition return false.
        if (nOs < listOfSeats.length) 
            listOfSeats[nOs++] = s;
@@ -37,6 +51,16 @@ public class Flight {
                System.out.println("No seats are available ");      
    }
    
+=======
+    public void AddSeat(Seat s) { //To add the given seat to the array in the first empty location and return true. If there is no space for the addition return false.
+        if (nOs < listOfSeats.length) {
+            listOfSeats[nOs++] = s;
+        } else {
+            System.out.println("No seats are available ");
+        }
+    }
+
+>>>>>>> b2bd4f7 update All classes & i remove the comments
     // Getter Methods 
     public String getFlightNumber() {
         return FlightNumber;
@@ -46,14 +70,18 @@ public class Flight {
         return listOfSeats;
     }
 
+<<<<<<< Upstream, based on origin/master
     /*public Passenger[] getPassengers() {
         return passengers;
     } */
 
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
     public int getnOs() {
         return nOs;
     }
 
+<<<<<<< Upstream, based on origin/master
     /*public int getNumPassengers() {
         return numOfPassenger;
     } */
@@ -69,6 +97,8 @@ public class Flight {
     }
     */
 
+=======
+>>>>>>> b2bd4f7 update All classes & i remove the comments
     // return true if there is seat available, false if there is not seat available.
     public boolean checkAvailbility() {
         return nOs < listOfSeats.length;
@@ -77,7 +107,6 @@ public class Flight {
     public int Capacity() { //To return number of seats in the flight.
         return listOfSeats.length;
     }
-    
 
     public String getArrivalCity() { //To return Arrival city.
         return ArrivalCity;
@@ -100,13 +129,13 @@ public class Flight {
         String str = "Flight FlightNumber : " + FlightNumber
                 + "\nArrival City : " + ArrivalCity + "\nDepartureCity : "
                 + DepartureCity + "\nArrival time : " + Arrival_time + "\nDeparture_time : " + Departure_time
+<<<<<<< Upstream, based on origin/master
                 + "\nnumber Of seat : " + 270;
+=======
+                + "\nnumber Of seat : " + 270 + "\n ----------------------------------";
+>>>>>>> b2bd4f7 update All classes & i remove the comments
 
         return str;
-//        for (Seat listOfSeat : listOfSeats) {
-//            str = str + listOfSeat.toString();
-//        }
-//        return str;
     }
 
 }
