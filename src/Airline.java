@@ -24,21 +24,6 @@ public class Airline {
                 flights[nOf++] = newFlight;
     }
 
-    public boolean removeFlight(Flight f) { //receives a flight and removes the flight (replace the deleted one with the last element in the array). Returns true if the deletion was done successfully and false if the given flight is not found.
-        for (int i = 0; i < nOf; i++) {
-            if (flights[i] == f) {
-                flights[i] = flights[nOf - 1];
-                nOf--;
-                flights[nOf] = null;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public Flight[] getFlights() {
-        return flights;
-    }
 
     public Flight[] SearchFlight(String ArCity, String DeCity) { // returns array contains information about a flight if the given ArrivalCity & DepartureCity is exists in any flight, otherwise return null
 
@@ -65,5 +50,8 @@ public class Airline {
             }
         }
         return false;
+    }
+        public Flight[] getFlights() {
+        return flights;
     }
 }
