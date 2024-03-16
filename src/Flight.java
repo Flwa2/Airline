@@ -32,20 +32,20 @@ public class Flight {
     }
 
     // Getter Methods 
-    public String getFlightNumber() {
+    public String getFlightNumber() { // return FlightNumber
         return FlightNumber;
     }
 
-    public Seat[] getListOfSeats() {
+    public Seat[] getListOfSeats() { //return listOfSeats
         return listOfSeats;
     }
 
-    public int getnOs() {
+    public int getnOs() { //return nOs
         return nOs;
     }
 
-    // return true if there is seat available, false if there is not seat available.
-    public boolean checkAvailbility() {
+  
+    public boolean checkAvailbility() {   // return true if there is seat available, false if there is not seat available.
         return nOs < listOfSeats.length;
     }
 
@@ -61,11 +61,11 @@ public class Flight {
         return DepartureCity;
     }
 
-    public String getArrival_time() {
+    public String getArrival_time() { //return Arrival_time
         return Arrival_time;
     }
 
-    public String getDeparture_time() {
+    public String getDeparture_time() { //return Departure_time
         return Departure_time;
     }
 
