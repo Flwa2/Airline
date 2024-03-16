@@ -43,7 +43,7 @@ public class Airline {
 
     }
 
-    public boolean isValidFlight(String departureCity, String arrivalCity) {
+    public boolean isValidFlight(String departureCity, String arrivalCity) { // 
         for (Flight flight : flights) {
             if (flight != null && flight.getDepartureCity().equalsIgnoreCase(departureCity) && flight.getArrivalCity().equalsIgnoreCase(arrivalCity)) {
                 return true;
@@ -51,7 +51,7 @@ public class Airline {
         }
         return false;
     }
-        public Flight[] getFlights() {
+        public Flight[] getFlights() { //returns the array of the fligths. 
         return flights;
     }
 }
