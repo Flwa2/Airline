@@ -17,7 +17,7 @@ public class Airline {
         nOf = 0;
     }
 
-    public void AddFlights(Flight[] newFlights) { //To add the given flight to the array in the first empty location. 
+    public void AddFlights(Flight newFlights) { //To add the given flight to the array in the first empty location. 
 
         for (Flight newFlight : newFlights) 
             if (nOf < flights.length) 
