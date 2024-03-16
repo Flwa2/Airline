@@ -43,7 +43,7 @@ public class Airline {
 
     }
 
-    public boolean isValidFlight(String departureCity, String arrivalCity) { // 
+    public boolean isValidFlight(String departureCity, String arrivalCity) { // returns true if the given ArrivalCity & DepartureCity is exists in any flight and != null, otherwise return false.
         for (Flight flight : flights) {
             if (flight != null && flight.getDepartureCity().equalsIgnoreCase(departureCity) && flight.getArrivalCity().equalsIgnoreCase(arrivalCity)) {
                 return true;
