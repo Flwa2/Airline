@@ -66,10 +66,7 @@ public class Airline {
 
     }
      public Flight[] getFlights() {
-    Flight[] allFlights = new Flight[ nOf];
-    for (int i = 0; i <  nOf; i++) {
-        allFlights[i] = flights[i];
-    }
-    return allFlights;
+    
+    return flights;
 }
 }
