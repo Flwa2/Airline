@@ -23,7 +23,7 @@ public class Flight {
         nOs = 0;
     }
 
-    public void AddSeat(Seat s) { //To add the given seat to the array in the first empty location and return true. If there is no space for the addition return false.
+    public void AddSeat(Seat s) { //This method to add the given seat to the array in the first empty location and If there is space .
         if (nOs < listOfSeats.length) {
             listOfSeats[nOs++] = s;
         } else {
