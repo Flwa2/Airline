@@ -25,7 +25,7 @@ public class AirlineResevationSystem {
 
         BookTickets bookTickets = new BookTickets(Seat.totalCapacity); // Creating a ticket booking system 
         // Declare object and Variables 
-        Passenger p;
+        //Passenger p;
         Flight[] Search;
         Seat seat;
         String Name;
@@ -156,6 +156,7 @@ public class AirlineResevationSystem {
                     System.out.print("Enter booking ID: ");
                     String bookingIDToDisplay = input.nextLine();
                     bookTickets.displayTicketInfo(bookingIDToDisplay);
+                    System.out.println("-------------------------------");
                     break;
 
                 case 6:

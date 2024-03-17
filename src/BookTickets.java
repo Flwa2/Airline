@@ -2,8 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
-// @author FLWAH ALRASHED
 public class BookTickets {
 
     private String BookingID;
@@ -72,11 +70,12 @@ public class BookTickets {
                 System.out.println("Passenger Passport Number: " + passenger.getPassportNumber());
                 System.out.println("Passenger Mobile Number: " + passenger.getMobileNumber());
                 System.out.println("Seat Code: " + passenger.getSeatCode());
+
                 // Get flight information associated with this passenger
                 Flight[] passengerFlights = passenger.getFlight();
                 for (Flight flight1 : passengerFlights) {
                     if (flight1 != null) {
-                        System.out.println("Flight Information:");
+                        System.out.println("\nFlight Information:");
                         System.out.println("Flight Number: " + flight1.getFlightNumber());
                         System.out.println("Departure City: " + flight1.getDepartureCity());
                         System.out.println("Arrival City: " + flight1.getArrivalCity());
