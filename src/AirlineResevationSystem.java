@@ -4,6 +4,7 @@
  */
 
 import java.util.Scanner;
+import java.util.*;
 
 public class AirlineResevationSystem {
 
@@ -32,7 +33,7 @@ public class AirlineResevationSystem {
         String passport;
         String mobile;
         int select;
-        int choice;
+        int choice =0 ;
         String SeatCode = ""; // to assign seat code and pass it to class BookTickets 
 
         do {
@@ -43,10 +44,15 @@ public class AirlineResevationSystem {
             System.out.println("4. Search for flights");
             System.out.println("5. Display user ticket info");
             System.out.println("6. Exit");
-            System.out.print("Enter your choice: ");
-            choice = input.nextInt();
-            input.nextLine();
-
+            try {
+                System.out.print("Enter your choice: ");
+                choice = input.nextInt();
+                input.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid integer choice.");
+                input.nextLine(); // Consume invalid input
+                continue; // Restart the loop
+            }
             switch (choice) {
                 //To show all available flights
                 case 1:
@@ -94,24 +100,36 @@ public class AirlineResevationSystem {
                             seat = new FirstClass("First Class ", 400.0);
                             if (seat instanceof FirstClass) {
                                 SeatCode = seat.generateSeatCode();
-                                bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
-                                Seat.display(seat);
+                                try {
+                                    bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
+                                    Seat.display(seat);
+                                } catch (NoSeatsAvailable e) {
+                                    System.out.println(e.getMessage());
+                                }
                             }
                             break;
                         case 2:
                             seat = new Business("Business", 200.0);
                             if (seat instanceof Business) {
                                 SeatCode = seat.generateSeatCode();
-                                bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
-                                Seat.display(seat);
+                                try {
+                                    bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
+                                    Seat.display(seat);
+                                } catch (NoSeatsAvailable e) {
+                                    System.out.println(e.getMessage());
+                                }
                             }
                             break;
                         case 3:
                             seat = new Economy("Economy", 100.0);
                             if (seat instanceof Economy) {
                                 SeatCode = seat.generateSeatCode();
-                                bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
-                                Seat.display(seat);
+                                try {
+                                    bookTickets.bookFlight(flights, new Passenger(Name, passport, mobile, SeatCode));
+                                    Seat.display(seat);
+                                } catch (NoSeatsAvailable e) {
+                                    System.out.println(e.getMessage());
+                                }
                             }
                             break;
 

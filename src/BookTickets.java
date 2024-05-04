@@ -30,7 +30,7 @@ public class BookTickets {
         return BookingID;
     }
 
-    public void bookFlight(Flight[] flight, Passenger passenger) {
+    public void bookFlight(Flight[] flight, Passenger passenger) throws NoSeatsAvailable {
 
         if (numOfPassengers < passengers.length) {
             passenger.setFlight(flight);
@@ -41,11 +41,11 @@ public class BookTickets {
             System.out.println("\nFlight booked successfully for : " + passenger.getName() + "\nBooking ID: " + bookingID);
             numOfBooking++;
         } else {
-            System.out.println("Cannot book flight. The seats are full.");
+            throw new NoSeatsAvailable("Cannot book flight. The seats are full.");
         }
     }
 
-    public void cancelFlight(String bookingID) {
+public void cancelFlight(String bookingID) {
         boolean Cancelbooking = false;
         for (int i = 0; i < numOfPassengers; i++) {
             if (passengers[i] != null && passengers[i].getBookID().equals(bookingID)) {
