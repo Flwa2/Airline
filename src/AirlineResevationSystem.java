@@ -62,7 +62,7 @@ public class AirlineResevationSystem {
                             System.out.println(flight);
                         }
 
-                    }
+                    }airline.save ("info.ser");
                     break;
 
                 case 2:
