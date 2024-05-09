@@ -83,9 +83,13 @@ public class Airline {
           int size =in.readInt();
           String Name=(String) in.readObject();
           name=Name;
+           Flight [] F=new  Flight[size];
           for(int i=0;i<size;i++){
-            Flight obj=(Flight)in.readObject();
-         // this.AddFlights(obj);
+         
+         
+              F [i] =(Flight)in.readObject();
+            
+            this.AddFlights(F);
             in.close();
           }}
           catch(ClassNotFoundException e){
