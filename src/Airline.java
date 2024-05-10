@@ -28,7 +28,7 @@ public class Airline {
         return flights;
     }
 
-    public Flight[] SearchFlight(String ArCity, String DeCity) { // returns array contains information about a flight if the given ArrivalCity & DepartureCity is exists in any flight, otherwise return null
+    public Flight[] SearchFlight(String DeCity, String ArCity) { // returns array contains information about a flight if the given ArrivalCity & DepartureCity is exists in any flight, otherwise return null
 
         Flight listOfFlights[] = new Flight[nOf];
         int j = 0;

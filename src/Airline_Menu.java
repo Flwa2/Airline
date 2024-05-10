@@ -1,4 +1,5 @@
 
+import javax.swing.ImageIcon;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -10,11 +11,11 @@
  */
 public class Airline_Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Airline_Menu
-     */
     public Airline_Menu() {
         initComponents();
+        // to set Icon image  for a Frame 
+        ImageIcon icon = new ImageIcon(getClass().getResource("Logo.jpg"));
+        this.setIconImage(icon.getImage());
     }
 
     /**
@@ -30,18 +31,19 @@ public class Airline_Menu extends javax.swing.JFrame {
         verticalLabelIUI2 = new necesario.VerticalLabelIUI();
         jPanel1 = new javax.swing.JPanel();
         rSMaterialButtonCircle1 = new rojerusan.RSMaterialButtonCircle();
-        rSMaterialButtonCircle4 = new rojerusan.RSMaterialButtonCircle();
         rSMaterialButtonCircle3 = new rojerusan.RSMaterialButtonCircle();
         rSMaterialButtonCircle2 = new rojerusan.RSMaterialButtonCircle();
         ShowFlights = new rojerusan.RSMaterialButtonCircle();
-        rSMaterialButtonCircle7 = new rojerusan.RSMaterialButtonCircle();
-        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        rSMaterialButtonCircle4 = new rojerusan.RSMaterialButtonCircle();
         rSMaterialButtonCircle5 = new rojerusan.RSMaterialButtonCircle();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setTitle("Airline Reservation System");
+        setBackground(new java.awt.Color(255, 255, 255));
+        setFocusable(false);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -57,17 +59,7 @@ public class Airline_Menu extends javax.swing.JFrame {
         });
         jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 368, 65));
 
-        rSMaterialButtonCircle4.setText("Search for flights");
-        rSMaterialButtonCircle4.setToolTipText("");
-        rSMaterialButtonCircle4.setActionCommand("");
-        rSMaterialButtonCircle4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(rSMaterialButtonCircle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 368, 65));
-
-        rSMaterialButtonCircle3.setText("Cancel reservation");
+        rSMaterialButtonCircle3.setText("Display Information");
         rSMaterialButtonCircle3.setToolTipText("");
         rSMaterialButtonCircle3.setActionCommand("");
         rSMaterialButtonCircle3.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +67,7 @@ public class Airline_Menu extends javax.swing.JFrame {
                 rSMaterialButtonCircle3ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 368, 65));
+        jPanel1.add(rSMaterialButtonCircle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 368, 65));
 
         rSMaterialButtonCircle2.setText("Book Ticket");
         rSMaterialButtonCircle2.setToolTipText("");
@@ -96,25 +88,6 @@ public class Airline_Menu extends javax.swing.JFrame {
         });
         jPanel1.add(ShowFlights, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 368, 65));
 
-        rSMaterialButtonCircle7.setText("Show available flights");
-        rSMaterialButtonCircle7.setToolTipText("");
-        rSMaterialButtonCircle7.setActionCommand("");
-        rSMaterialButtonCircle7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle7ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(rSMaterialButtonCircle7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 368, 65));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel3.setText("X");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
-
         jLabel2.setFont(new java.awt.Font("Sitka Text", 2, 36)); // NOI18N
         jLabel2.setText("Airline Reservation system");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, 58));
@@ -123,7 +96,17 @@ public class Airline_Menu extends javax.swing.JFrame {
         jLabel1.setText("Welcome");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 205, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 530));
+        rSMaterialButtonCircle4.setText("Cancel reservation");
+        rSMaterialButtonCircle4.setToolTipText("");
+        rSMaterialButtonCircle4.setActionCommand("");
+        rSMaterialButtonCircle4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonCircle4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rSMaterialButtonCircle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 368, 65));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 540));
 
         rSMaterialButtonCircle5.setText("Show available flights");
         rSMaterialButtonCircle5.setToolTipText("");
@@ -135,43 +118,39 @@ public class Airline_Menu extends javax.swing.JFrame {
         });
         getContentPane().add(rSMaterialButtonCircle5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 368, 65));
 
-        setSize(new java.awt.Dimension(644, 537));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void rSMaterialButtonCircle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle1ActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_rSMaterialButtonCircle1ActionPerformed
 
     private void rSMaterialButtonCircle2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSMaterialButtonCircle2ActionPerformed
+        // close current frame
+        setVisible(false);
+        // Open Available Frame
+        BookFrame book = new BookFrame();
+        book.setVisible(true);    }//GEN-LAST:event_rSMaterialButtonCircle2ActionPerformed
 
     private void rSMaterialButtonCircle3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rSMaterialButtonCircle3ActionPerformed
-
-    private void rSMaterialButtonCircle4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSMaterialButtonCircle4ActionPerformed
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-
-        System.exit(0);
-    }//GEN-LAST:event_jLabel3MouseClicked
 
     private void rSMaterialButtonCircle5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle5ActionPerformed
 
     }//GEN-LAST:event_rSMaterialButtonCircle5ActionPerformed
 
     private void ShowFlightsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowFlightsActionPerformed
+        // close current frame
+        setVisible(false);
         // Open Available Frame
         AvailableFlights AvailableFrame = new AvailableFlights();
         AvailableFrame.setVisible(true);    }//GEN-LAST:event_ShowFlightsActionPerformed
 
-    private void rSMaterialButtonCircle7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle7ActionPerformed
+    private void rSMaterialButtonCircle4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rSMaterialButtonCircle7ActionPerformed
+    }//GEN-LAST:event_rSMaterialButtonCircle4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,14 +191,12 @@ public class Airline_Menu extends javax.swing.JFrame {
     private rojerusan.RSMaterialButtonCircle ShowFlights;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle1;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle2;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle3;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle4;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle5;
-    private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle7;
     private necesario.VerticalLabelIUI verticalLabelIUI1;
     private necesario.VerticalLabelIUI verticalLabelIUI2;
     // End of variables declaration//GEN-END:variables

@@ -7,7 +7,7 @@ public abstract class Seat {
     protected String seatCode;
     protected String seatType;
     protected double price;
-   
+
     protected Flight flight;
     protected static int nextSeatNumber = 1;  //Shared amoung FirstClass , Buisness , Economy to count number of seats 
     protected static int totalCapacity = 270;
@@ -29,8 +29,6 @@ public abstract class Seat {
         return seatCode;
     }
 
-  
-
     public void setSeatCode(String seatCode) {
         this.seatCode = seatCode;
     }
@@ -41,6 +39,6 @@ public abstract class Seat {
     }
 
     public static void display(Seat seat) {
-        System.out.println("The cost of " + seat.seatType + "\nSeat code :" + seat.getSeatCode() + " is " + seat.getPrice());
+        System.out.println("The cost of " + seat.seatType + " is " + seat.getPrice() + "\nSeat code :" + seat.getSeatCode());
     }
 }

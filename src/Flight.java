@@ -13,7 +13,8 @@ public class Flight {
     private Seat[] listOfSeats;     // Array to add passengers in the seats
     public int nOs;                 // number of seats 
 
-    public Flight(String FlightNumber, String arrivalCity, String departureCity, String arrival_time,
+
+    public Flight(String FlightNumber, String departureCity , String  arrivalCity, String arrival_time,
             String departure_time) {
         this.FlightNumber = FlightNumber;
         ArrivalCity = arrivalCity;

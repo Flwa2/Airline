@@ -1,13 +1,14 @@
-
-
-
+import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
-import javax.swing.SwingConstants;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Scanner;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,47 +18,61 @@ public class AvailableFlights extends javax.swing.JFrame {
 
     public AvailableFlights() {
         initComponents();
+        // to set Icon image  for a Frame 
+        ImageIcon icon = new ImageIcon(getClass().getResource("Logo.jpg"));
+        this.setIconImage(icon.getImage());
+        Flight[] flights = readFlightsFromFile("flights.txt");
+        FlightsToTable();
+    }
+
+    protected void FlightsToTable() {
+        Flight[] flights = readFlightsFromFile("flights.txt");
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        for (Flight flight : flights) {
+            model.addRow(new Object[]{flight.getFlightNumber(), flight.getDepartureCity(), flight.getArrivalCity(),
+                flight.getDeparture_time(), flight.getArrival_time()});
+        }
+
         jTable1.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD, 24));
         jTable1.getTableHeader().setOpaque(false);
         jTable1.getTableHeader().setBackground(new Color(32, 136, 203));
         jTable1.getTableHeader().setForeground(new Color(255, 255, 255));
         jTable1.setRowHeight(40);
 
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-
-        Flight[] searchResults = searchFlights();
-
-        for (Flight flight : searchResults) {
-            model.addRow(new Object[]{flight.getFlightNumber(), flight.getDepartureCity(), flight.getArrivalCity(),
-                flight.getDeparture_time(), flight.getArrival_time()});
-        }
-
+        //  DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         // Align table content to center
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        centerRenderer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         for (int i = 0; i < jTable1.getColumnCount(); i++) {
             jTable1.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
     }
 
-    private Flight[] searchFlights() {
-        Flight[] searchResults = {
-            new Flight("F100", "London", "Riyadh", "9:15", "14:30"),
-            new Flight("F101", "New York", "Paris", "8:00", "21:45"),
-            new Flight("F102", "Paris", "Jeddah", "10:30", "13:45"),
-            new Flight("F103", "Riyadh", "Dubai", "11:45", "18:30"),
-            new Flight("F104", "Tokyo", "Dammam", "15:20", "23:00"),
-            new Flight("F105", "Berlin", "Hong Kong", "13:00", "4:30"),
-            new Flight("F106", "Sydney", "Singapore", "10:45", "16:15"),
-            new Flight("F107", "Los Angeles", "Chicago", "17:30", "9:00"),
-            new Flight("F108", "Dubai", "Moscow", "14:15", "18:30"),
-            new Flight("F109", "Beijing", "Tokyo", "8:30", "14:45"),
-            new Flight("F110", "San Francisco ", "Seoul", "12:00", "15:30"),
-            new Flight("F111", "Paris", "New Delhi", "20:00", "8:30"),
-            new Flight("F112", "Rome", "Athens", "11:30", "13:15"),
-            new Flight("F113", "Cairo", "Riyadh", "9:45", "12:00")
-        };
-        return searchResults;
+    protected Flight[] readFlightsFromFile(String filename) {
+        Flight[] flights = new Flight[100]; // Assuming a maximum of 100 flights
+        int count = 0;
+        try (FileInputStream fis = new FileInputStream(new File(filename)); Scanner scanner = new Scanner(fis)) {
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] parts = line.split(",");
+                if (parts.length == 5) {
+                    Flight flight = new Flight(parts[0], parts[1], parts[2], parts[3], parts[4]);
+                    flights[count] = flight;
+                    count++;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Flight[] Available_Flights = new Flight[count];
+        // Copy flights into the new array
+        for (int i = 0; i < count; i++) {
+            Available_Flights[i] = flights[i];
+        }
+        return Available_Flights;
+
     }
 
     @SuppressWarnings("unchecked")
@@ -68,13 +83,12 @@ public class AvailableFlights extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Airline Resevation System");
         setBackground(new java.awt.Color(255, 255, 255));
-        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -99,15 +113,6 @@ public class AvailableFlights extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 850, 600));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel3.setText("X");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
-
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 3, 24)); // NOI18N
         jLabel1.setText("Available flights ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, -1, -1));
@@ -123,19 +128,14 @@ public class AvailableFlights extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 730));
 
-        setSize(new java.awt.Dimension(952, 731));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-
-        System.exit(0);
-    }//GEN-LAST:event_jLabel3MouseClicked
-
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-   // Close the current frame (SecondFrame)
+        // Close the current frame (SecondFrame)
         dispose();
-        
+
         // Open the first frame (MainFrame) again
         Airline_Menu Menu = new Airline_Menu();
         Menu.setVisible(true);
@@ -156,7 +156,6 @@ public class AvailableFlights extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private necesario.CustomUI customUI1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
