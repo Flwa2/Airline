@@ -110,7 +110,7 @@ public class BoardingDetails extends javax.swing.JFrame {
         DeptCountry.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         DeptCountry.setForeground(new java.awt.Color(102, 102, 102));
         DeptCountry.setText("FROM");
-        jPanel1.add(DeptCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, -1, 20));
+        jPanel1.add(DeptCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, -1, 20));
 
         FullNameShow.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         FullNameShow.setText("XXXXXX");
@@ -172,8 +172,8 @@ public class BoardingDetails extends javax.swing.JFrame {
         FlightNo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         FlightNo.setForeground(new java.awt.Color(0, 0, 204));
         jPanel1.add(FlightNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 70, 40));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 50, 30));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 70, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 90, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 90, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 600));
 

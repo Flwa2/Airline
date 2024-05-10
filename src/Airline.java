@@ -2,6 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+import java.io.*;
+import javax.swing.JOptionPane;
 
 public class Airline {
 
@@ -54,4 +56,47 @@ public class Airline {
         }
         return false;
     }
-}
+    public void save (String fileName){
+        try{
+        File out =new File (fileName);
+        FileOutputStream fos =new FileOutputStream (out);
+        
+        ObjectOutputStream file =new  ObjectOutputStream (fos);
+        
+        file.writeInt(nOf);
+        file.writeObject(name);
+        
+        for (int i=0; i<nOf;i++)
+            file.writeObject(flights[i]);
+        file.close();
+        JOptionPane.showMessageDialog(null,"Done saving");
+        }  catch(IOException e ){
+            JOptionPane.showMessageDialog(null,"error"+e.toString()); 
+            
+        }
+    }
+    public void loud (String fileName){
+        try{
+        File f =new File (fileName); 
+        FileInputStream fi = new FileInputStream (f);
+          ObjectInputStream in =new  ObjectInputStream (fi);
+          int size =in.readInt();
+          String Name=(String) in.readObject();
+          name=Name;
+           Flight [] F=new  Flight[size];
+          for(int i=0;i<size;i++){
+         
+         
+              F [i] =(Flight)in.readObject();
+            
+            this.AddFlights(F);
+            in.close();
+          }}
+          catch(ClassNotFoundException e){
+            JOptionPane.showMessageDialog(null,"Error reading");      
+                  }
+         catch(IOException e){
+            JOptionPane.showMessageDialog(null,"Error "+ e.toString() );      
+        }
+}}
+

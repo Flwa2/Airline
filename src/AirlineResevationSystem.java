@@ -10,9 +10,9 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 public class AirlineResevationSystem {
-    
+
     public static void main(String[] args) {
-        
+
         Scanner input = new Scanner(System.in);
         // Creating airline with 10 flights
         Airline airline = new Airline("Saudi Airline", "SA", 20);
@@ -33,16 +33,16 @@ public class AirlineResevationSystem {
             new Flight("F112", "Rome", "Athens", "11:30", "13:15"),
             new Flight("F113", "Riyadh", "Cairo", "9:45", "12:00")
         };
-        
+
         airline.AddFlights(flights);
         writeFlightsToFile("flights.txt", flights);
         Login log = new Login();
         log.setVisible(true);
-        
+
 //        Airline_Menu menu = new Airline_Menu();
 //        menu.setVisible(true);
-        
         BookTickets bookTickets = new BookTickets(Seat.totalCapacity); // Creating a ticket booking system 
+
         // Declare object and Variables 
         //Passenger p;
         Flight[] Search;
@@ -79,10 +79,12 @@ public class AirlineResevationSystem {
                         if (flight != null) {
                             System.out.println(flight);
                         }
-                        
+
                     }
+
+                    airline.save("info.ser");
                     break;
-                
+
                 case 2:
                     //Book a seat
                     System.out.print("\nEnter the departure city: ");
@@ -109,7 +111,7 @@ public class AirlineResevationSystem {
                         System.out.println("4. Exit booking seat");
                         System.out.print("Please select your seats :");
                         select = input.nextInt();
-                        
+
                     } while (!(select >= 1 && select <= 3));  //until user selects a valid option
 
                     switch (select) {
@@ -150,19 +152,19 @@ public class AirlineResevationSystem {
                                 }
                             }
                             break;
-                        
+
                         default:
                             System.out.println("Exiting...");
                             System.exit(0);
                     }
                     break;
-                
+
                 case 3:         //Cancel reservation
                     System.out.print("Enter booking ID to cancel: ");
                     String bookingID = input.nextLine();
                     bookTickets.cancelFlight(bookingID);
                     break;
-                
+
                 case 4:
                     //Search for flights
                     System.out.print("Enter the departure city: ");
@@ -183,9 +185,9 @@ public class AirlineResevationSystem {
                     } else {
                         System.out.println("No available flights were found for the specified destination.");
                     }
-                    
+
                     break;
-                
+
                 case 5:
                     //displaying user ticket info
 
@@ -194,19 +196,19 @@ public class AirlineResevationSystem {
                     bookTickets.displayTicketInfo(bookingIDToDisplay);
                     System.out.println("-------------------------------");
                     break;
-                
+
                 case 6:
                     System.out.println("Exiting...");
                     break;
                 default:
                     System.out.println("Your selection is invalid. Please choose a number between 1 and 5.");
             }
-            
+
         } while (choice != 6);
-        
+
         input.close();
     }
-    
+
     protected static void writeFlightsToFile(String filename, Flight[] flights) {
         try (FileOutputStream fos = new FileOutputStream(filename); PrintWriter writer = new PrintWriter(fos)) {
             for (Flight flight : flights) {
