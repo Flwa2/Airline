@@ -34,7 +34,6 @@ public class BookFrame extends javax.swing.JFrame {
             }
         });
         seatype = createSeat(selectedSeatType);
-
         seatcode = seatype.generateSeatCode();
     }
 
@@ -81,7 +80,7 @@ public class BookFrame extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        rSMaterialButtonCircle1 = new rojerusan.RSMaterialButtonCircle();
+        BookButton = new rojerusan.RSMaterialButtonCircle();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Airline Reservation System");
@@ -160,11 +159,11 @@ public class BookFrame extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel10.setText("Book your Flight online");
 
-        rSMaterialButtonCircle1.setBackground(new java.awt.Color(51, 153, 255));
-        rSMaterialButtonCircle1.setText("Book");
-        rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
+        BookButton.setBackground(new java.awt.Color(51, 153, 255));
+        BookButton.setText("Book");
+        BookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle1ActionPerformed(evt);
+                BookButtonActionPerformed(evt);
             }
         });
 
@@ -205,13 +204,13 @@ public class BookFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(rSMaterialButtonCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSpinField1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSpinField2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -251,14 +250,12 @@ public class BookFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jLabel8))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jSpinField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(33, 33, 33)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSpinField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jSpinField2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSpinField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(119, 119, 119)
@@ -268,7 +265,7 @@ public class BookFrame extends javax.swing.JFrame {
                         .addContainerGap(47, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rSMaterialButtonCircle1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25))))
         );
 
@@ -310,7 +307,7 @@ public class BookFrame extends javax.swing.JFrame {
         Menu.setVisible(true);
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void rSMaterialButtonCircle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle1ActionPerformed
+    private void BookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookButtonActionPerformed
         // Get the destination entered by the user
         String departureCity = DepartField.getText();
         String arrivalCity = ArrivalField.getText();
@@ -328,12 +325,11 @@ public class BookFrame extends javax.swing.JFrame {
         }
         JPanel panel = new JPanel();
         panel.setBackground(Color.WHITE);
-        // Create JLabel with font
+        // Create JLabel with font       
         JLabel Available_Message = new JLabel("Destination is available in the available flights");
         Available_Message.setFont(new Font("Times New Roman", Font.BOLD, 18));
         JLabel NotAvailable_Message = new JLabel("Destination is not available in the available flights.");
         NotAvailable_Message.setFont(new Font("Times New Roman", Font.BOLD, 18));
-        // Customize the background color here with JOption
 
         if (destinationAvailable) {
             // Open the PassengerDetails frame
@@ -345,7 +341,7 @@ public class BookFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(panel, NotAvailable_Message, "Destination Not Available", JOptionPane.ERROR_MESSAGE);
         }
 
-     }//GEN-LAST:event_rSMaterialButtonCircle1ActionPerformed
+     }//GEN-LAST:event_BookButtonActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // Update selected seat type
@@ -366,6 +362,7 @@ public class BookFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private app.bolivia.swing.JCTextField ArrivalField;
+    private rojerusan.RSMaterialButtonCircle BookButton;
     private app.bolivia.swing.JCTextField DepartField;
     public javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -382,7 +379,6 @@ public class BookFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private com.toedter.components.JSpinField jSpinField1;
     private com.toedter.components.JSpinField jSpinField2;
-    private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle1;
     // End of variables declaration//GEN-END:variables
 
 }

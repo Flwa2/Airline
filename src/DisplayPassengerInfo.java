@@ -10,8 +10,6 @@ import javax.swing.JFrame;
  */
 public class DisplayPassengerInfo extends javax.swing.JFrame {
 
-    BookTickets objb = new BookTickets(200);
-
     public DisplayPassengerInfo() {
         initComponents();
         // to set Icon image  for a Frame 
@@ -27,9 +25,8 @@ public class DisplayPassengerInfo extends javax.swing.JFrame {
         int y = (screenSize.height - this.getHeight()) / 2;
         // Set the frame's location
         this.setLocation(x, y);
-        // Make sure the program exits when the frame closes
+        
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // Make the frame visible
         this.setVisible(true);
     }
 
@@ -115,21 +112,19 @@ public class DisplayPassengerInfo extends javax.swing.JFrame {
 
     // Method to search for a booking ID
     private String searchBookingId(String bookingId) {
-        // Assuming you have a collection of booking IDs stored somewhere
-        // You can replace this with your actual implementation to search for the booking ID
-        boolean exists = false; // Flag to indicate if the booking ID exists
-        String result = ""; // String to store the result
+       
+        boolean exists = false; 
+        String result = ""; 
 
         if (bookingId.equals(BoardingDetails.BookId)) {
             exists = true;
-            // Get booking details and populate the result string
+
             result = "Booking ID: " + BoardingDetails.BookId + "\n";
             result += "Passenger Name: " + PassengerDetails.FullNameField.getText() + "\n";
             result += "Passport No: " + PassengerDetails.PassportNoField.getText() + "\n";
             result += "Phone number: " + PassengerDetails.MobileField.getText() + "\n";
-
         } else {
-            result = "Booking ID not found"; // Message if booking ID doesn't exist
+            result = "Booking ID not found"; 
         }
 
         return result;

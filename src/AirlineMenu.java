@@ -30,9 +30,9 @@ public class AirlineMenu extends javax.swing.JFrame {
         verticalLabelIUI1 = new necesario.VerticalLabelIUI();
         verticalLabelIUI2 = new necesario.VerticalLabelIUI();
         jPanel1 = new javax.swing.JPanel();
-        rSMaterialButtonCircle1 = new rojerusan.RSMaterialButtonCircle();
-        rSMaterialButtonCircle3 = new rojerusan.RSMaterialButtonCircle();
-        rSMaterialButtonCircle2 = new rojerusan.RSMaterialButtonCircle();
+        LogoutButton = new rojerusan.RSMaterialButtonCircle();
+        DisplayInfoButton = new rojerusan.RSMaterialButtonCircle();
+        BookButton = new rojerusan.RSMaterialButtonCircle();
         ShowFlights = new rojerusan.RSMaterialButtonCircle();
         Header = new javax.swing.JLabel();
         rSMaterialButtonCircle5 = new rojerusan.RSMaterialButtonCircle();
@@ -47,34 +47,34 @@ public class AirlineMenu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rSMaterialButtonCircle1.setText("Log out");
-        rSMaterialButtonCircle1.setToolTipText("");
-        rSMaterialButtonCircle1.setActionCommand("");
-        rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
+        LogoutButton.setText("Log out");
+        LogoutButton.setToolTipText("");
+        LogoutButton.setActionCommand("");
+        LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle1ActionPerformed(evt);
+                LogoutButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 368, 65));
+        jPanel1.add(LogoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 368, 65));
 
-        rSMaterialButtonCircle3.setText("Display Information");
-        rSMaterialButtonCircle3.setToolTipText("");
-        rSMaterialButtonCircle3.setActionCommand("");
-        rSMaterialButtonCircle3.addActionListener(new java.awt.event.ActionListener() {
+        DisplayInfoButton.setText("Display Information");
+        DisplayInfoButton.setToolTipText("");
+        DisplayInfoButton.setActionCommand("");
+        DisplayInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle3ActionPerformed(evt);
+                DisplayInfoButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 368, 65));
+        jPanel1.add(DisplayInfoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 368, 65));
 
-        rSMaterialButtonCircle2.setText("Book Ticket");
-        rSMaterialButtonCircle2.setToolTipText("");
-        rSMaterialButtonCircle2.addActionListener(new java.awt.event.ActionListener() {
+        BookButton.setText("Book Ticket");
+        BookButton.setToolTipText("");
+        BookButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle2ActionPerformed(evt);
+                BookButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 368, 65));
+        jPanel1.add(BookButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 368, 65));
 
         ShowFlights.setText("Show available flights");
         ShowFlights.setToolTipText("");
@@ -106,25 +106,25 @@ public class AirlineMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rSMaterialButtonCircle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle1ActionPerformed
+    private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         // terminates the program
         System.exit(0);
-    }//GEN-LAST:event_rSMaterialButtonCircle1ActionPerformed
+    }//GEN-LAST:event_LogoutButtonActionPerformed
 
-    private void rSMaterialButtonCircle2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle2ActionPerformed
+    private void BookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookButtonActionPerformed
         // close current frame
         this.setVisible(false);
         // Open Available Frame
         BookFrame book = new BookFrame();
-        book.setVisible(true);    }//GEN-LAST:event_rSMaterialButtonCircle2ActionPerformed
+        book.setVisible(true);    }//GEN-LAST:event_BookButtonActionPerformed
 
-    private void rSMaterialButtonCircle3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle3ActionPerformed
+    private void DisplayInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayInfoButtonActionPerformed
         // close current frame
         this.setVisible(false);
         // Open DisplayPassengerInfo Frame
         DisplayPassengerInfo Display = new DisplayPassengerInfo();
         Display.setVisible(true);
-    }//GEN-LAST:event_rSMaterialButtonCircle3ActionPerformed
+    }//GEN-LAST:event_DisplayInfoButtonActionPerformed
 
     private void rSMaterialButtonCircle5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle5ActionPerformed
 
@@ -174,12 +174,12 @@ public class AirlineMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSMaterialButtonCircle BookButton;
+    private rojerusan.RSMaterialButtonCircle DisplayInfoButton;
     private javax.swing.JLabel Header;
+    private rojerusan.RSMaterialButtonCircle LogoutButton;
     private rojerusan.RSMaterialButtonCircle ShowFlights;
     private javax.swing.JPanel jPanel1;
-    private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle1;
-    private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle2;
-    private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle3;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle5;
     private necesario.VerticalLabelIUI verticalLabelIUI1;
     private necesario.VerticalLabelIUI verticalLabelIUI2;

@@ -8,13 +8,14 @@ import java.util.*;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 public class AirlineResevationSystem {
 
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        // Creating airline with 10 flights
+        // Creating airline with 20 flights
         Airline airline = new Airline("Saudi Airline", "SA", 20);
         //Creating Flight object with information 
         Flight[] flights = {
@@ -40,8 +41,6 @@ public class AirlineResevationSystem {
         Login log = new Login();
         log.setVisible(true);
 
-//        Airline_Menu menu = new Airline_Menu();
-//        menu.setVisible(true);
         BookTickets bookTickets = new BookTickets(Seat.totalCapacity); // Creating a ticket booking system 
 
         // Declare object and Variables 
@@ -207,6 +206,7 @@ public class AirlineResevationSystem {
         input.close();
     }
 
+    // Writes flight information to a text file.
     protected static void writeFlightsToFile(String filename, Flight[] flights) {
         try (FileOutputStream fos = new FileOutputStream(filename); PrintWriter writer = new PrintWriter(fos)) {
             for (Flight flight : flights) {
@@ -219,7 +219,7 @@ public class AirlineResevationSystem {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "An error occurred. Please try again later.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

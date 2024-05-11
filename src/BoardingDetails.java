@@ -2,17 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-//import javax.swing.JFrame;
+
 import javax.swing.ImageIcon;
-//import java.awt.Font;
-//import java.awt.Color;
-//import java.awt.Toolkit;
-//import java.io.FileWriter;
-//import java.io.IOException;
 
 public class BoardingDetails extends javax.swing.JFrame {
-
-    BookTickets BK = new BookTickets(270);
+    BookTickets BooK = new BookTickets(270);
     static String BookId;
 
     public BoardingDetails() {
@@ -36,7 +30,7 @@ public class BoardingDetails extends javax.swing.JFrame {
         jLabel1.setText(PassengerDetails.depCity);
         jLabel2.setText(PassengerDetails.arrCity);
         FlightNo.setText(PassengerDetails.FlightNO);
-        BookId = BK.generateBookingID();
+        BookId = BooK.generateBookingID();
         jLabel3.setText(BookId);
 
     }
@@ -76,7 +70,7 @@ public class BoardingDetails extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        rSMaterialButtonCircle1 = new rojerusan.RSMaterialButtonCircle();
+        BacktoMenuButton = new rojerusan.RSMaterialButtonCircle();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Airline Reservation System");
@@ -191,14 +185,14 @@ public class BoardingDetails extends javax.swing.JFrame {
         jLabel4.setText("Booking ID :");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, -1, -1));
 
-        rSMaterialButtonCircle1.setBackground(new java.awt.Color(102, 102, 102));
-        rSMaterialButtonCircle1.setText("Back to Menu");
-        rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
+        BacktoMenuButton.setBackground(new java.awt.Color(102, 102, 102));
+        BacktoMenuButton.setText("Back to Menu");
+        BacktoMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle1ActionPerformed(evt);
+                BacktoMenuButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 300, 80));
+        jPanel1.add(BacktoMenuButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 300, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 600));
 
@@ -206,15 +200,16 @@ public class BoardingDetails extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rSMaterialButtonCircle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle1ActionPerformed
+    private void BacktoMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BacktoMenuButtonActionPerformed
         this.setVisible(false);
         // Open Airline menu
         AirlineMenu menu = new AirlineMenu();
         menu.setVisible(true);
-    }//GEN-LAST:event_rSMaterialButtonCircle1ActionPerformed
+    }//GEN-LAST:event_BacktoMenuButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private rojerusan.RSMaterialButtonCircle BacktoMenuButton;
     private javax.swing.JLabel DeptCountry;
     private javax.swing.JLabel DestinationCountry;
     private javax.swing.JLabel FlightNo;
@@ -237,7 +232,6 @@ public class BoardingDetails extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle1;
     private rojerusan.RSMaterialButtonCircleBeanInfo rSMaterialButtonCircleBeanInfo1;
     // End of variables declaration//GEN-END:variables
 }

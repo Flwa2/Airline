@@ -1,3 +1,4 @@
+
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
@@ -5,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -21,12 +23,15 @@ public class AvailableFlights extends javax.swing.JFrame {
         // to set Icon image  for a Frame 
         ImageIcon icon = new ImageIcon(getClass().getResource("Logo.jpg"));
         this.setIconImage(icon.getImage());
+        
         Flight[] flights = readFlightsFromFile("flights.txt");
         FlightsToTable();
     }
 
     protected void FlightsToTable() {
+        // Read flights data from file
         Flight[] flights = readFlightsFromFile("flights.txt");
+        
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         for (Flight flight : flights) {
             model.addRow(new Object[]{flight.getFlightNumber(), flight.getDepartureCity(), flight.getArrivalCity(),
@@ -39,7 +44,6 @@ public class AvailableFlights extends javax.swing.JFrame {
         jTable1.getTableHeader().setForeground(new Color(255, 255, 255));
         jTable1.setRowHeight(40);
 
-        //  DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         // Align table content to center
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -48,6 +52,7 @@ public class AvailableFlights extends javax.swing.JFrame {
         }
     }
 
+    // Reads flight information from a text file and returns an array of Flight objects
     protected Flight[] readFlightsFromFile(String filename) {
         Flight[] flights = new Flight[100]; // Assuming a maximum of 100 flights
         int count = 0;
@@ -63,7 +68,7 @@ public class AvailableFlights extends javax.swing.JFrame {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
 
         Flight[] Available_Flights = new Flight[count];
@@ -84,7 +89,7 @@ public class AvailableFlights extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        Back = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Airline Resevation System");
@@ -118,14 +123,14 @@ public class AvailableFlights extends javax.swing.JFrame {
         jLabel1.setText("Available flights ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 48)); // NOI18N
-        jLabel4.setText("<");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        Back.setFont(new java.awt.Font("Segoe UI Emoji", 1, 48)); // NOI18N
+        Back.setText("<");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                BackMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 23, 40, 50));
+        jPanel1.add(Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 23, 40, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 730));
 
@@ -133,14 +138,13 @@ public class AvailableFlights extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // Close the current frame (SecondFrame)
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        // Close the current frame
         dispose();
-
         // Open the first frame (MainFrame) again
         AirlineMenu Menu = new AirlineMenu();
         Menu.setVisible(true);
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_BackMouseClicked
 
     public static void main(String args[]) {
 
@@ -155,9 +159,9 @@ public class AvailableFlights extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Back;
     private necesario.CustomUI customUI1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
