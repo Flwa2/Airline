@@ -9,9 +9,9 @@ import javax.swing.ImageIcon;
  *
  * @author FALWAH
  */
-public class Airline_Menu extends javax.swing.JFrame {
+public class AirlineMenu extends javax.swing.JFrame {
 
-    public Airline_Menu() {
+    public AirlineMenu() {
         initComponents();
         // to set Icon image  for a Frame 
         ImageIcon icon = new ImageIcon(getClass().getResource("Logo.jpg"));
@@ -34,8 +34,7 @@ public class Airline_Menu extends javax.swing.JFrame {
         rSMaterialButtonCircle3 = new rojerusan.RSMaterialButtonCircle();
         rSMaterialButtonCircle2 = new rojerusan.RSMaterialButtonCircle();
         ShowFlights = new rojerusan.RSMaterialButtonCircle();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        Header = new javax.swing.JLabel();
         rSMaterialButtonCircle4 = new rojerusan.RSMaterialButtonCircle();
         rSMaterialButtonCircle5 = new rojerusan.RSMaterialButtonCircle();
 
@@ -88,13 +87,9 @@ public class Airline_Menu extends javax.swing.JFrame {
         });
         jPanel1.add(ShowFlights, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 368, 65));
 
-        jLabel2.setFont(new java.awt.Font("Sitka Text", 2, 36)); // NOI18N
-        jLabel2.setText("Airline Reservation system");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, 58));
-
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 2, 24)); // NOI18N
-        jLabel1.setText("Welcome");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 205, -1));
+        Header.setFont(new java.awt.Font("Sitka Text", 2, 36)); // NOI18N
+        Header.setText("Airline Reservation system");
+        jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, 58));
 
         rSMaterialButtonCircle4.setText("Cancel reservation");
         rSMaterialButtonCircle4.setToolTipText("");
@@ -123,18 +118,23 @@ public class Airline_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rSMaterialButtonCircle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle1ActionPerformed
+        // terminates the program
         System.exit(0);
     }//GEN-LAST:event_rSMaterialButtonCircle1ActionPerformed
 
     private void rSMaterialButtonCircle2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle2ActionPerformed
         // close current frame
-        setVisible(false);
+        this.setVisible(false);
         // Open Available Frame
         BookFrame book = new BookFrame();
         book.setVisible(true);    }//GEN-LAST:event_rSMaterialButtonCircle2ActionPerformed
 
     private void rSMaterialButtonCircle3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle3ActionPerformed
-        // TODO add your handling code here:
+        // close current frame
+        this.setVisible(false);
+        // Open DisplayPassengerInfo Frame
+        DisplayPassengerInfo Display = new DisplayPassengerInfo();
+        Display.setVisible(true);
     }//GEN-LAST:event_rSMaterialButtonCircle3ActionPerformed
 
     private void rSMaterialButtonCircle5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle5ActionPerformed
@@ -169,28 +169,28 @@ public class Airline_Menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Airline_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AirlineMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Airline_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AirlineMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Airline_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AirlineMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Airline_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AirlineMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Airline_Menu().setVisible(true);
+                new AirlineMenu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Header;
     private rojerusan.RSMaterialButtonCircle ShowFlights;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle1;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle2;

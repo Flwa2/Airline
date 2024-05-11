@@ -308,7 +308,7 @@ public class BookFrame extends javax.swing.JFrame {
         dispose();
 
         // Open the first frame (MainFrame) again
-        Airline_Menu Menu = new Airline_Menu();
+        AirlineMenu Menu = new AirlineMenu();
         Menu.setVisible(true);
     }//GEN-LAST:event_jLabel4MouseClicked
 

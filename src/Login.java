@@ -38,7 +38,7 @@ public class Login extends javax.swing.JFrame {
         jCTextField2 = new app.bolivia.swing.JCTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Loing page");
+        setTitle("Airline Resevation System");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
@@ -179,7 +179,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Airline_Menu menu = new Airline_Menu();
+        AirlineMenu menu = new AirlineMenu();
         menu.setVisible(true);    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

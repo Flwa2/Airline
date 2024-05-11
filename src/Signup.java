@@ -274,7 +274,7 @@ public class Signup extends javax.swing.JFrame {
             // close current frame
             setVisible(false);
             // Open Menu Frame
-            Airline_Menu MenuFrame = new Airline_Menu();
+            AirlineMenu MenuFrame = new AirlineMenu();
             MenuFrame.setVisible(true);
         }
     }//GEN-LAST:event_SignupButtonActionPerformed

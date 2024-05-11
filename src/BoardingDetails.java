@@ -11,31 +11,34 @@ import javax.swing.ImageIcon;
 //import java.io.IOException;
 
 public class BoardingDetails extends javax.swing.JFrame {
-    
+
+    BookTickets BK = new BookTickets(270);
+
     public BoardingDetails() {
         initComponents();
         // to set Icon image  for a Frame 
         ImageIcon icon = new ImageIcon(getClass().getResource("Logo.jpg"));
         this.setIconImage(icon.getImage());
     }
-    
+
     public BoardingDetails(String fullName, String passportNo, String mobile, String seat) {
         initComponents();
         // to set Icon image  for a Frame 
         ImageIcon icon = new ImageIcon(getClass().getResource("Logo.jpg"));
         this.setIconImage(icon.getImage());
-        
+
         FullNameShow.setText(fullName);
         PassportNoShow.setText(passportNo);
         MobileShow.setText(mobile);
         SeatTextShow.setText(seat);
-        
+
         jLabel1.setText(PassengerDetails.depCity);
         jLabel2.setText(PassengerDetails.arrCity);
         FlightNo.setText(PassengerDetails.FlightNO);
+        jLabel3.setText(BK.generateBookingID());
         
     }
-    
+
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -43,7 +46,7 @@ public class BoardingDetails extends javax.swing.JFrame {
             }
         });
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -68,6 +71,7 @@ public class BoardingDetails extends javax.swing.JFrame {
         FlightNo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Airline Reservation System");
@@ -174,6 +178,7 @@ public class BoardingDetails extends javax.swing.JFrame {
         jPanel1.add(FlightNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 70, 40));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 90, 30));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 90, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 120, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 600));
 
@@ -200,6 +205,7 @@ public class BoardingDetails extends javax.swing.JFrame {
     private javax.swing.JLabel SeatTextShow;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;

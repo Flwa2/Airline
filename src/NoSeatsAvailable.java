@@ -8,7 +8,5 @@ public class NoSeatsAvailable extends Exception{
 
     public NoSeatsAvailable(String Message) {
         super(Message);
-    }
-    
-    
+    }   
 }

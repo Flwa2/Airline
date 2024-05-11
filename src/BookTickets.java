@@ -20,7 +20,7 @@ public class BookTickets {
     }
 
     // Method to generate a unique booking ID
-    private String generateBookingID() {
+    protected String generateBookingID() {
         String text = "FL";
         int randomNum = (int) (Math.random() * 1000000);  //random 6-digit
         return text + String.format("%06d", randomNum);
@@ -89,6 +89,7 @@ public void cancelFlight(String bookingID) {
         if (!found) {
             System.out.println("No ticket found with the provided booking ID.");
         }*/
+
    public String print(String bookingID) {
     String s = "";
     boolean found = false;
