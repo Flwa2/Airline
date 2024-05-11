@@ -60,8 +60,7 @@ public void cancelFlight(String bookingID) {
             System.out.println("Booking not found!");
         }
     }
-
-    public void displayTicketInfo(String bookingID) {
+ /*public void displayTicketInfo(String bookingID) {
 
         boolean found = false;
         for (Passenger passenger : passengers) {
@@ -89,6 +88,36 @@ public void cancelFlight(String bookingID) {
         }
         if (!found) {
             System.out.println("No ticket found with the provided booking ID.");
+        }*/
+   public String print(String bookingID) {
+    String s = "";
+    boolean found = false;
+    for (Passenger passenger : passengers) {
+        if (passenger != null && bookingID.equals(passenger.getBookID())) {
+            s += "Passenger Name: " + passenger.getName() + "\n";
+            s += "Passenger Passport Number: " + passenger.getPassportNumber() + "\n";
+            s += "Passenger Mobile Number: " + passenger.getMobileNumber() + "\n";
+            s += "Seat Code: " + passenger.getSeatCode() + "\n";
+
+            // Get flight information associated with this passenger
+            Flight[] passengerFlights = passenger.getFlight();
+            for (Flight flight : passengerFlights) {
+                if (flight != null) {
+                    s += "\nFlight Information:\n";
+                    s += "Flight Number: " + flight.getFlightNumber() + "\n";
+                    s += "Departure City: " + flight.getDepartureCity() + "\n";
+                    s += "Arrival City: " + flight.getArrivalCity() + "\n";
+                    s += "Departure Time: " + flight.getDeparture_time() + "\n";
+                    s += "Arrival Time: " + flight.getArrival_time() + "\n";
+                }
+            }
+            found = true;
+            break;
         }
     }
+    if (!found) {
+        s = "Booking not found!";
+    }
+    return s;
+}
 }
