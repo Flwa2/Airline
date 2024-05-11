@@ -152,12 +152,12 @@ public class PassengerDetails extends javax.swing.JFrame {
 
         arrival_Country.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         arrival_Country.setForeground(new java.awt.Color(102, 102, 102));
-        Main.add(arrival_Country, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 80, 90, 30));
+        Main.add(arrival_Country, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 120, 90, 30));
 
         DestinationCountry.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         DestinationCountry.setForeground(new java.awt.Color(102, 102, 102));
         DestinationCountry.setText("TO");
-        Main.add(DestinationCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 60, -1, 12));
+        Main.add(DestinationCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 100, -1, 12));
 
         PlaneIcon.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         Main.add(PlaneIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 70, 40, -1));
@@ -166,18 +166,18 @@ public class PassengerDetails extends javax.swing.JFrame {
         OriginCountry1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         OriginCountry1.setForeground(new java.awt.Color(102, 102, 102));
         OriginCountry1.setText("FROM");
-        Main.add(OriginCountry1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 60, -1, 12));
+        Main.add(OriginCountry1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 100, -1, 12));
 
         DepartCountry.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         DepartCountry.setForeground(new java.awt.Color(102, 102, 102));
-        Main.add(DepartCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 70, 30));
+        Main.add(DepartCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 70, 30));
 
         DepartHeader3.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         DepartHeader3.setText("Passenger Details");
         Main.add(DepartHeader3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 340, 50));
 
         FlightNo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        FlightNo.setForeground(new java.awt.Color(207, 0, 15));
+        FlightNo.setForeground(new java.awt.Color(0, 0, 153));
         Main.add(FlightNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 230, 70, 40));
 
         FlightNoHeader9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -213,7 +213,7 @@ public class PassengerDetails extends javax.swing.JFrame {
         Main.add(WarningText2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 210, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Smallplane.png"))); // NOI18N
-        Main.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 40, 60));
+        Main.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 40, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,19 +239,18 @@ public class PassengerDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_PassportNoFieldActionPerformed
 
     private void ContinueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueButtonActionPerformed
-
-        if (FullNameField.getText().isEmpty() && MobileField.getText().isEmpty() && PassportNoField.getText().isEmpty()) {
+        if (FullNameField.getText().isEmpty() && PassportNoField.getText().isEmpty() && MobileField.getText().isEmpty()) {
             WarningText1.setText("* Full Name is Required");
             WarningText2.setText("* Passport No. is Required");
             WarningText3.setText("* Mobile number is Required");
-        } else if (FullNameField.getText().isEmpty() && MobileField.getText().isEmpty()) {
+        } else if (FullNameField.getText().isEmpty() && PassportNoField.getText().isEmpty()) {
             WarningText1.setText("* Full Name is Required");
             WarningText2.setText("* Passport No. is Required");
             WarningText3.setText("");
-        } else if (FullNameField.getText().isEmpty() && PassportNoField.getText().isEmpty()) {
+        } else if (FullNameField.getText().isEmpty() && MobileField.getText().isEmpty()) {
             WarningText1.setText("* Full Name is Required");
             WarningText2.setText("");
-            WarningText3.setText("* Passport No. is Required");
+            WarningText3.setText("* Mobile number is Required");
         } else if (MobileField.getText().isEmpty() && PassportNoField.getText().isEmpty()) {
             WarningText1.setText("");
             WarningText2.setText("* Passport No. is Required");
@@ -260,11 +259,11 @@ public class PassengerDetails extends javax.swing.JFrame {
             WarningText1.setText("* Full Name is Required");
             WarningText2.setText("");
             WarningText3.setText("");
-        } else if (MobileField.getText().isEmpty()) {
+        } else if (PassportNoField.getText().isEmpty()) {
             WarningText1.setText("");
             WarningText2.setText("* Passport No. is Required");
             WarningText3.setText("");
-        } else if (PassportNoField.getText().isEmpty()) {
+        } else if (MobileField.getText().isEmpty()) {
             WarningText1.setText("");
             WarningText2.setText("");
             WarningText3.setText("* Mobile number is Required");
@@ -274,7 +273,7 @@ public class PassengerDetails extends javax.swing.JFrame {
             String Mobile = MobileField.getText();
             String seat = SeatTextShow.getText();
             new BoardingDetails(firstName, passportNo, Mobile, seat).setVisible(true); //Passing seat, firstName, lastName, passportNo to ConfirmationForm
-
+            this.setVisible(false);
         }
     }//GEN-LAST:event_ContinueButtonActionPerformed
 
@@ -326,13 +325,13 @@ public class PassengerDetails extends javax.swing.JFrame {
     private javax.swing.JLabel FlightNo;
     private javax.swing.JLabel FlightNoHeader10;
     private javax.swing.JLabel FlightNoHeader9;
-    private javax.swing.JTextField FullNameField;
+    public static javax.swing.JTextField FullNameField;
     private javax.swing.JSeparator HorizontalSeperator1;
     private javax.swing.JPanel Main;
-    private javax.swing.JTextField MobileField;
+    public static javax.swing.JTextField MobileField;
     private javax.swing.JLabel MobileText;
     private javax.swing.JLabel OriginCountry1;
-    private javax.swing.JTextField PassportNoField;
+    public static javax.swing.JTextField PassportNoField;
     private javax.swing.JLabel PassportNoText;
     private javax.swing.JLabel PlaneIcon;
     private javax.swing.JLabel SeatTextShow;

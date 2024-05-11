@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 public class BoardingDetails extends javax.swing.JFrame {
 
     BookTickets BK = new BookTickets(270);
+    static String BookId;
 
     public BoardingDetails() {
         initComponents();
@@ -35,8 +36,9 @@ public class BoardingDetails extends javax.swing.JFrame {
         jLabel1.setText(PassengerDetails.depCity);
         jLabel2.setText(PassengerDetails.arrCity);
         FlightNo.setText(PassengerDetails.FlightNO);
-        jLabel3.setText(BK.generateBookingID());
-        
+        BookId = BK.generateBookingID();
+        jLabel3.setText(BookId);
+
     }
 
     public static void main(String[] args) {
@@ -51,6 +53,7 @@ public class BoardingDetails extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rSMaterialButtonCircleBeanInfo1 = new rojerusan.RSMaterialButtonCircleBeanInfo();
         jPanel1 = new javax.swing.JPanel();
         MobileShow = new javax.swing.JLabel();
         Label_1 = new javax.swing.JLabel();
@@ -72,6 +75,8 @@ public class BoardingDetails extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        rSMaterialButtonCircle1 = new rojerusan.RSMaterialButtonCircle();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Airline Reservation System");
@@ -85,7 +90,7 @@ public class BoardingDetails extends javax.swing.JFrame {
 
         MobileShow.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         MobileShow.setText("XXXXXX");
-        jPanel1.add(MobileShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 200, 40));
+        jPanel1.add(MobileShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 230, 40));
 
         Label_1.setBackground(new java.awt.Color(255, 255, 255));
         Label_1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -118,7 +123,7 @@ public class BoardingDetails extends javax.swing.JFrame {
 
         FullNameShow.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         FullNameShow.setText("XXXXXX");
-        jPanel1.add(FullNameShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 180, 40));
+        jPanel1.add(FullNameShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 300, 40));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 550, 30));
@@ -135,7 +140,7 @@ public class BoardingDetails extends javax.swing.JFrame {
 
         PassportNoShow.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         PassportNoShow.setText("XXXXXX");
-        jPanel1.add(PassportNoShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 200, 40));
+        jPanel1.add(PassportNoShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 320, 40));
 
         SeatHeader.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         SeatHeader.setForeground(new java.awt.Color(102, 102, 102));
@@ -174,11 +179,26 @@ public class BoardingDetails extends javax.swing.JFrame {
         jPanel1.add(FlightNoHeader, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 70, 20));
 
         FlightNo.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        FlightNo.setForeground(new java.awt.Color(0, 0, 204));
+        FlightNo.setForeground(new java.awt.Color(0, 0, 153));
         jPanel1.add(FlightNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 70, 40));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 90, 30));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, 90, 30));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 120, 40));
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 120, 40));
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel4.setText("Booking ID :");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, -1, -1));
+
+        rSMaterialButtonCircle1.setBackground(new java.awt.Color(102, 102, 102));
+        rSMaterialButtonCircle1.setText("Back to Menu");
+        rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonCircle1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 300, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 600));
 
@@ -186,13 +206,20 @@ public class BoardingDetails extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void rSMaterialButtonCircle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle1ActionPerformed
+        this.setVisible(false);
+        // Open Airline menu
+        AirlineMenu menu = new AirlineMenu();
+        menu.setVisible(true);
+    }//GEN-LAST:event_rSMaterialButtonCircle1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DeptCountry;
     private javax.swing.JLabel DestinationCountry;
     private javax.swing.JLabel FlightNo;
     private javax.swing.JLabel FlightNoHeader;
-    private javax.swing.JLabel FullNameShow;
+    protected javax.swing.JLabel FullNameShow;
     private javax.swing.JLabel Header;
     private javax.swing.JLabel ImageLabel;
     private javax.swing.JLabel Label_1;
@@ -206,8 +233,11 @@ public class BoardingDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle1;
+    private rojerusan.RSMaterialButtonCircleBeanInfo rSMaterialButtonCircleBeanInfo1;
     // End of variables declaration//GEN-END:variables
 }

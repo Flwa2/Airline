@@ -36,7 +36,7 @@ public class AirlineResevationSystem {
 
         airline.AddFlights(flights);
         writeFlightsToFile("flights.txt", flights);
-      // Create 
+        // Create a login frame
         Login log = new Login();
         log.setVisible(true);
 
@@ -82,8 +82,6 @@ public class AirlineResevationSystem {
                         }
 
                     }
-
-                    airline.save("info.ser");
                     break;
 
                 case 2:

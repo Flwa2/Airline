@@ -35,7 +35,6 @@ public class AirlineMenu extends javax.swing.JFrame {
         rSMaterialButtonCircle2 = new rojerusan.RSMaterialButtonCircle();
         ShowFlights = new rojerusan.RSMaterialButtonCircle();
         Header = new javax.swing.JLabel();
-        rSMaterialButtonCircle4 = new rojerusan.RSMaterialButtonCircle();
         rSMaterialButtonCircle5 = new rojerusan.RSMaterialButtonCircle();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,7 +55,7 @@ public class AirlineMenu extends javax.swing.JFrame {
                 rSMaterialButtonCircle1ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 368, 65));
+        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 368, 65));
 
         rSMaterialButtonCircle3.setText("Display Information");
         rSMaterialButtonCircle3.setToolTipText("");
@@ -66,7 +65,7 @@ public class AirlineMenu extends javax.swing.JFrame {
                 rSMaterialButtonCircle3ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 368, 65));
+        jPanel1.add(rSMaterialButtonCircle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 368, 65));
 
         rSMaterialButtonCircle2.setText("Book Ticket");
         rSMaterialButtonCircle2.setToolTipText("");
@@ -75,7 +74,7 @@ public class AirlineMenu extends javax.swing.JFrame {
                 rSMaterialButtonCircle2ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 368, 65));
+        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 368, 65));
 
         ShowFlights.setText("Show available flights");
         ShowFlights.setToolTipText("");
@@ -85,21 +84,11 @@ public class AirlineMenu extends javax.swing.JFrame {
                 ShowFlightsActionPerformed(evt);
             }
         });
-        jPanel1.add(ShowFlights, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 368, 65));
+        jPanel1.add(ShowFlights, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 368, 65));
 
         Header.setFont(new java.awt.Font("Sitka Text", 2, 36)); // NOI18N
         Header.setText("Airline Reservation system");
-        jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, 58));
-
-        rSMaterialButtonCircle4.setText("Cancel reservation");
-        rSMaterialButtonCircle4.setToolTipText("");
-        rSMaterialButtonCircle4.setActionCommand("");
-        rSMaterialButtonCircle4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(rSMaterialButtonCircle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 368, 65));
+        jPanel1.add(Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, 58));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 540));
 
@@ -148,10 +137,6 @@ public class AirlineMenu extends javax.swing.JFrame {
         AvailableFlights AvailableFrame = new AvailableFlights();
         AvailableFrame.setVisible(true);    }//GEN-LAST:event_ShowFlightsActionPerformed
 
-    private void rSMaterialButtonCircle4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSMaterialButtonCircle4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSMaterialButtonCircle4ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -195,7 +180,6 @@ public class AirlineMenu extends javax.swing.JFrame {
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle1;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle2;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle3;
-    private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle4;
     private rojerusan.RSMaterialButtonCircle rSMaterialButtonCircle5;
     private necesario.VerticalLabelIUI verticalLabelIUI1;
     private necesario.VerticalLabelIUI verticalLabelIUI2;
