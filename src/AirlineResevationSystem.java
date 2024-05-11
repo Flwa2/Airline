@@ -13,6 +13,9 @@ public class AirlineResevationSystem {
 
     public static void main(String[] args) {
 
+          NewJFrame22 obj = new NewJFrame22 ();
+            obj.setVisible(true);
+
         Scanner input = new Scanner(System.in);
         // Creating airline with 10 flights
         Airline airline = new Airline("Saudi Airline", "SA", 20);
@@ -159,7 +162,7 @@ public class AirlineResevationSystem {
                     }
                     break;
 
-                case 3:         //Cancel reservation
+               case 3:         //Cancel reservation
                     System.out.print("Enter booking ID to cancel: ");
                     String bookingID = input.nextLine();
                     bookTickets.cancelFlight(bookingID);
@@ -191,11 +194,11 @@ public class AirlineResevationSystem {
                 case 5:
                     //displaying user ticket info
 
-                    System.out.print("Enter booking ID: ");
+                 /*   System.out.print("Enter booking ID: ");
                     String bookingIDToDisplay = input.nextLine();
                     bookTickets.displayTicketInfo(bookingIDToDisplay);
                     System.out.println("-------------------------------");
-                    break;
+                    break;*/
 
                 case 6:
                     System.out.println("Exiting...");
